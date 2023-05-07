@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+	<meta name="author" content="">
+    
+    <title>Template 01 for Bootstrap</title>
+
+      <!-- chat html css -->
+	<link href="{{ url_for('static', filename='css/chatst.css')}}" rel="stylesheet">
+	
+	<!--index html css-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="{{ url_for('static', filename='css/custom.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact-input-style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hover-effect.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css')}}" />
+	
+	
+	
+	<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+  rel="stylesheet"
+/>
+	<style>
+	
+	
+		.col-xl-7 { 
+			    width: 90% ! important;
+		}				
+	
+		.card {
+		    --mdb-card-bg: inherit ! important;
+		}
+	</style>
+	
+	
+	
+	
+	
+  </head>
+  
+  <body>  
+  
+  <nav class="navbar navbar-default top-bar affix" data-spy="affix" data-offset-top="250" >
+    <div class="container" >
+        <!- Brand and toggle get grouped for better mobile display ->
+        <div class="navbar-header page-scroll">
+           <!-- <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>-->
+             <a href="/" class="navbar-brand" style="color: black ! important;">22best</a>
+
+        </div>
+        <!- Collect the nav links, forms, and other content for toggling ->
+        <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+
+        </div>
+        <!- /.navbar-collapse ->
+    </div>
+    <!- /.container-fluid ->
+</nav>
+
+  
+  <section class="gradient-custom" style="background-size: auto ! important;     height: auto; ! important;">
+  <div class="container py-5">
+
+    <div class="row">
+
+      
+      <div class="col-md-6 col-lg-7 col-xl-7">
+
+        <ul class="list-unstyled text-white">
+
+
+
+
+
+
+<!--       사용자 질문 -->
+          <li class="d-flex justify-content-between mb-4">
+		  
+            <div class="card mask-custom w-100">
+              <div class="card-header d-flex justify-content-between p-3"
+                style="border-bottom: 1px solid rgba(255,255,255,.3);">
+                <p class="fw-bold mb-0">Your question</p>
+                
+              </div>
+              <div class="card-body">
+                <p class="mb-0">
+                  {{ question }}
+                </p>
+              </div>
+            </div>
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp" alt="avatar"
+              class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
+          </li>
+          
+		  <!-- gpt 대답 -->
+		  <li class="d-flex justify-content-between mb-4">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
+              class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+            <div class="card mask-custom">
+              <div class="card-header d-flex justify-content-between p-3"
+                style="border-bottom: 1px solid rgba(255,255,255,.3);">
+                <p class="fw-bold mb-0">wtechGPT</p>
+               
+              </div>
+              <div class="card-body">
+                <p class="mb-0">
+                    {{ answer }}
+                </p>
+              </div>
+            </div>
+          </li>
+
+
+
+		
+		  <!--
+		  <li class="mb-3">
+            <div class="form-outline form-white">
+              <textarea class="form-control" id="textAreaExample3" rows="4"></textarea>
+
+              <label class="form-label" for="textAreaExample3">Message</label>
+            </div>
+          </li>
+          <input type="hidden"  id="isFirst"  value="False">
+          <button type="submit" class="btn btn-light btn-lg btn-rounded float-end" id="chatSend">Send</button>
+
+            -->
+          <!--  <button id="searchBtn" type="submit" class="btn btn-search">Search</button>
+				-->
+        </ul>
+
+          <ul class="list-unstyled text-white">
+               <li class="mb-3">
+            <div class="form-outline form-white">
+              <textarea class="form-control" id="textAreaExample3" rows="4"></textarea>
+
+              <label class="form-label" for="textAreaExample3">Message</label>
+            </div>
+          </li>
+          <input type="hidden"  id="isFirst"  value="False">
+          <button type="submit" class="btn btn-light btn-lg btn-rounded float-end" id="chatSend">Send</button>
+
+
+          </ul>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"
+></script>
+
+   <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+<script>
+    /*
+    *
+    author : sookyeong
+    content : ajax 통신
+
+    */
+
+    $("#chatSend").click(function(){debugger;
+      var question = $("#textAreaExample3").val();
+      var isFirst = $("#isFirst").val()
+      let html_data = '';
+      html_data += `
+        <li class="d-flex justify-content-between mb-4">
+
+            <div class="card mask-custom w-100">
+              <div class="card-header d-flex justify-content-between p-3"
+                style="border-bottom: 1px solid rgba(255,255,255,.3);">
+                <p class="fw-bold mb-0">Your question</p>
+
+              </div>
+              <div class="card-body">
+                <p class="mb-0">
+                ${question}
+                </p>
+              </div>
+            </div>
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp" alt="avatar"
+              class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
+          </li>
+
+
+          <li class="d-flex justify-content-between mb-4">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
+              class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+            <div class="card mask-custom w-100">
+              <div class="card-header d-flex justify-content-between p-3"
+                style="border-bottom: 1px solid rgba(255,255,255,.3);">
+                <p class="fw-bold mb-0">wtechGPT</p>
+
+              </div>
+              <div class="card-body">
+                <img id="loading" src="{{ url_for('static', filename='img/whiteloading.gif')}}" style="width:26px;height:26px;"/>
+              </div>
+            </div>
+          </li>
+      `;
+        $("#textAreaExample3").val('');
+      //$(".list-unstyled").append(html_data);
+      //  $(".mb-3").before(html_data)
+      $(".list-unstyled:first-child").append(html_data);
+      $('html, body').animate({ scrollTop: $(".mb-3").offset().top }, 100);
+
+
+
+  debugger;
+    $.ajax({
+      type: "POST",
+      url:"/youtube",
+      data : {'prompt' : question , 'isFirst':isFirst},
+      success : function(data){
+        $(".list-unstyled:first-child li:last-child").remove();
+        let gpt_data = '';
+        gpt_data += `
+         <li class="d-flex justify-content-between mb-4">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
+              class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+            <div class="card mask-custom w-100">
+              <div class="card-header d-flex justify-content-between p-3"
+                style="border-bottom: 1px solid rgba(255,255,255,.3);">
+                <p class="fw-bold mb-0">wtechGPT</p>
+
+              </div>
+              <div class="card-body">
+                <p class="mb-0">
+                  ${data.answer}
+
+                </p>
+              </div>
+            </div>
+          </li>
+        `;
+         //$(".list-unstyled").append(gpt_data);
+         //$(".mb-3").before(gpt_data);
+         $(".list-unstyled:first-child").append(gpt_data);
+         $('html, body').animate({ scrollTop: $(".mb-3").offset().top -100 }, 100);
+
+
+      },
+       error:function(request,status,error){
+        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+       }
+
+    });
+
+    });
+
+
+
+
+
+
+
+</script>
+  </body>
+  
+  </html>
