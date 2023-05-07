@@ -1,0 +1,3299 @@
+"idx","topic_title","topic_content","topic_reply_main","topic_reply_re"
+1,DataList 데이터를 Gridview로 보여줄 때 행과 열 변경하는 방법 문의3,"<< 개요 >>
+
+간단하게 예시를 하나 들겠습니다.
+[
+    {'id': 'testID1', name: 'testName1', cont1: 'testCont1-1', cont2: 'testCont2-1'},
+    {'id': 'testID2', name: 'testName2', cont1: 'testCont1-2', cont2: 'testCont2-2'},
+    {'id': 'testID3', name: 'testName3', cont1: 'testCont1-3', cont2: 'testCont2-3'},
+    {'id': 'testID4', name: 'testName4', cont1: 'testCont1-4', cont2: 'testCont2-4'},
+    {'id': 'testID5', name: 'testName5', cont1: 'testCont1-5', cont2: 'testCont2-5'},
+    {'id': 'testID6', name: 'testName6', cont1: 'testCont1-6', cont2: 'testCont2-6'},
+]
+
+이런 데이터를 DataList에 담았습니다.
+그리고 저는 gridview로 이렇게 그리고 싶습니다.
+    testName1 testName2 testName3 testName4 testName5 testName6
+ID testID1 testID2 testID3 testID4 testID5 testID6
+CONT1 testCont1-1 testCont1-2 testCont1-3 testCont1-4 testCont1-5 testCont1-6
+CONT2 testCont2-1 testCont2-2 testCont2-3 testCont2-4 testCont2-5 testCont2-6
+
+일반적인 gridview로 datalist에 세팅 후 그릴 때는 위쪽 header엔 해당datalist의 key가 세팅되어 row단위로 데이터가 세팅되는데 전 컬럼 단위로 세팅되게 하고 싶습니다.
+
+방법이 있다면 알려주셨으면 합니다.
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+
+말씀해주신 컬럼 단위로 설정하는 방법은 지원하지않습니다.
+
+감사합니다.
+
+","보여준 예시처럼 구현하시려면 tableLayout 컴포넌트를 사용하여 구현하셔야 할 것 같습니다.
+
+감사합니다.
+
+"
+2,datamap을 datalist로 변환1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+datamap을 datalist로 변환 가능한가요?
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+datamap에는 [{a : 1},{b : 2},{c : 3}]이 있으면
+datalist에 [{{name : kim},{a : 1},{b : 2},{c : 3}},
+               {{name : lee},{a : 1},{b : 2},{c : 3}},
+               {{name : park},{a : 1},{b : 2},{c : 3}}]
+
+이런식으로 넣고 싶습니다.
+
+
+","안녕하세요.
+
+문의해주신 내용은 dataList의 setCellData API를 사용해 dataMap의 데이터를 dataList에 직접 추가하는 방식으로 가능합니다.
+
+이를 구현한 샘플 파일을 첨부하니 확인부탁드립니다.
+
+감사합니다.
+
+",""
+3,datalist rowMoveUp/Down 동작 문의1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+datalist 중간에 row를 추가하고 해당 로우에 rowMoveDown 을 할 시 동작하지 않고
+rowMoveUp 또한 정상동작하지 않습니다
+(마지막 row로 추가할 시 정상동작)
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+1. 데이터리스트 조회
+2. 데이터리스트 중간에 row 추가
+3. 데이터리스트 rowMoveDown, rowMoveUp 
+4. 일부 로우를 뛰어 넘어 2칸씩 이동, 미동작 등 이상동작
+
+관련 소스 첨부가 불가하여 확인이 필요하시다면 원격으로 확인 부탁드립니다.
+
+
+","안녕하십니까!
+
+dataList rowMoveUp 시 이상동작 확인이 안되어
+테스트 샘플을 첨부 합니다.
+(웹스퀘어 버전 : 5.0_3.3751B.20190805.170800_1.8)
+
+샘플파일로 테스트 해보시고 동작 확인 부탁드립니다.
+
+Q&A에 문의주신 암호화(DRM) 된 이미지 파일 업로드 시 오류 발생 문의는
+내부적으로 이미지 파일은 javax.imageio.ImageIO 을 사용하여 읽고 있습니다.
+API 에 나온 방식으로  인터페이스를 만들어 복호화 하여 사용하셔야 할거 같습니다.
+
+감사합니다.
+
+ 
+
+",""
+4,datalist 에서 onbeforchanging event 질문 3,"<< 개요 >>
+
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+parent 용 datalist 를 dlt_master
+child   용 datalist를 dlt_detail 로 하였을경우
+
+dlt_detail를 수정 하고 dlt_master의 row를 변경하였을경우
+   dlt_detail이 수정되었기 떄문에  confirm문장으로
+     dlt_master의 row를 변경할것인지 문의하여 로우를 변경할것인를 수행하고 싶습니다.
+
+아래 예제)  
+
+
+<< 재현 방법 >>
+    scwin.dlt_master_onbeforerowpositionchange = function(info) {
+         var vi_cnt = dc_userInfoList.getModifiedIndex();
+         if (vi_cnt > 0) {
+             if (confirm(""하위가 변경되었습니다"")) return true;
+             else return false;
+        }
+        return true;
+    };
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요 
+버전 및 빌드일에 작성해주신 build date는 스튜디오 버전으로 엔진버전을 알려주셔야 합니다.
+엔진버전 확인방법 ) 
+1. ctrl+우클릭 > 버전정보 
+2. f12 개발자도구 콘솔탭에서 WebSquare.core.getVersion() 입력
+
+추가적으로 문의주신 게 구현샘플을 요청하시는게 맞는지 확인요청드립니다. 
+첨부해주신 일부 소스에서 ( dc_userInfoList.getModifiedIndex(); ) dc_userInfoList는 질문해주신 부분에 나오지 않은 부분이라 질문드립니다. 
+파일 첨부가 가능하다면 테스트 가능한 파일 댓글로 남겨주시면 테스트하도록 하겠습니다. 
+
+","version 정보: version : 5.0_4.3846B.20191028.172458_1.8
+
+이 버젼에서 구현 셈풀 부탁드립니다.
+
+전화 통화 부탁드립니다. 
+ 
+
+안녕하세요 
+5.0_4.3846B.20191028.172458_1.8 버전에서 확인이 어려워 비슷한 일자인 5.0_4.3849B.20191030.101839_1.5 에서 테스트한 결과 정상적으로 동작하는 것 확인했습니다. 
+해당 소스 파일도 오류가 나는지 적용해보시기 바랍니다.
+감사합니다. 
+
+"
+5,datalist에서 2개 혹은 그이상의 컬럼의 값이 동일한것 찾기 1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+datalist 에서 컬럼 2개 값으로 찾기
+  함수 getMatchedIndex( conInfo , dataValue , exactMatch , stRowIndex , lastRowIndex )
+ 한개의 컬럼으로 값을 찾기는 가능합니다만
+ 두개의 컬럼으로 값을 찾아오는 방법는 있는지요.
+예) name, deptNo 컬럼이 있다면
+    name이 '홍길동' 이고  deptNo 가 '기획실'  인 사람을 찾을경우입니다.
+감사합니다. 
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+","안녕하세요.
+
+dataList1.getMatchedIndex API는 한 개의 column만 적용됩니다. 
+문의주신 것처럼 여러 개의 column과 비교하시려면 loop문으로 돌리셔서 직접 코딩하셔야 합니다. 
+
+예제 코드 ) 
+var row1 = dataList1.getMatchedIndex(""name"", ""홍길동"");
+var row2 = dataList1.getMatchedIndex(""deptNo"", ""기획실"");        
+var rowIndex = same(row1,row2);
+
+function same (a, b) {        
+        var i, la = a.length, lb = b.length, res = [];
+        for (i = 0; i < la; i++) {
+            if (b.indexOf(a[i]) !== -1)
+                res.push(a[i]);
+        }
+        return res;
+    };
+
+감사합니다. 
+
+",""
+6,"gridview header에 filter , datalist column filter 질문입니다.3","<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+gridview에 a라는 datalist를 바인딩해서 쓰고 있다고 가정합니다.
+
+헤더에 useFilter 를 이용해서 필터를 걸어놨고
+
+데이터 row값은 성공/실패 2개가 있습니다.
+
+
+
+직접 헤더를 클릭해서 '실패'만 체크하면 실패만 그리드에 보이고, 다시 전체 선택 체크하면 전체가 보이고 ... (이게 원하는 동작입니다.)
+
+근데 특정화면에서 성공 또는 실패를 클릭해서 이 grid가 있는 페이지로 이동을 하고 클릭한 타입에 따라 성공 또는 실패 를 필터를 줍니다.
+
+var filter = {type:""row"",colIndex:""status"", condition:""and"",exactMatch:true, key:""실패""};
+A_DataList.setColumnFilter(filter);
+
+이런 식으로 datalist에 필터를 걸어주면 목록에는 실패만 나오긴 하지만, 헤더에 필터를 누르면
+ 
+이렇게 '실패' 값만 보이기 때문에 '성공' 에 해당하는 값은 볼수가 없습니다.
+
+
+직접 헤더를 클릭해서 필터를 건 것처럼 스크립트로 저렇게 처리 해줄 방법이 없을까요?
+
+
+스크립트를 이용해 이그림처럼 필터를 걸어 주고 싶습니다.
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+
+gridView 속성중에 useFilterListSync 속성값을 true로 설정하시면 가능합니다.
+API 문서 참고 부탁드립니다.
+
+useFilterListSync
+- DataList의 setFilter(); 및 setColumnFilter(); 등의 함수를 통해 필터링한 경우, 해당 필터를 필터 목록에 표시. [default: false, true]
+GridView 전체에 설정.
+
+감사합니다.
+
+","해당 버전에서 테스트 결과 정상적으로 실행됩니다.
+첨부파일 확인부탁드립니다.
+
+감사합니다.
+
+"
+7,datalist 필터 질문1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+datalist에서, setColumFilter를 할 때, 컬럼의 값이 null("""")인 경우만 목록을 가져오는 필터링을 하고 싶은데
+
+setCoulmFilter({type:'row', colIndex:'col', key:"""", condition:'and'})
+
+이런식으로 작성하니까, 필터링이 되지 않더라구요.
+
+혹시 다른 방식으로 작성해야할까요?
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+
+setColumnFilter를 이용하여 null 인 값만 필터링을 하기 위해서는 type을 'func'로 변경하셔야합니다.
+아래 예시코드 확인 부탁드립니다.
+//예시
+dataList2.setColumnFilter({type:'func', colIndex:'col1', key:fn_tmpDeptFilter , condition: 'and'});
+
+var fn_tmpDeptFilter = function(cellData, tmpParam, rowIdx){
+                if(cellData == null || cellData ==''){
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+
+",""
+8,datalist setColumnFilter 문의입니다.1,"<< 개요 >>
+
+datalist setColumnFilter 문의입니다.
+
+필터링하는 것 중에, rowstatus로 필터링을 거는 방법이 따로 있을까요?
+
+
+<< 재현 방법 >>","안녕하세요.
+setColumnFilter에 아래와같이 함수를 정의하여 구현 가능합니다.
+예시)
+dataList1.setColumnFilter(
+                {type:'func', colIndex:'col1', key:fn_tmpDeptFilter, condition:'and'}
+            );
+
+
+// rowStatus가 ""U"" 인것만 return
+var fn_tmpDeptFilter = function(cellData, tmpParam, rowIdx){
+                            
+                if( dataList1.getRowStatus(rowIdx) !=""U""){
+                    return false;
+                }
+                return true;   //return이 true인 경우 적용하고 false인 경우 skip한다.
+            }  
+
+감사합니다.
+
+",""
+9,datalist setColumnFilter 문의1,"<< 개요 >>
+
+datalist setColumnFilter 문의입니다.
+
+필터링하는 것 중에, rowstatus로 필터링을 거는 방법이 따로 있을까요?
+
+
+<< 재현 방법 >>
+
+
+<< 비고 >","안녕하세요.
+
+Q&A게시판에 문의주실때 게시판의 양식에 맞게 작성하고 문의주시기 바랍니다.
+(문의하신 사이트명, 웹스퀘어 사용버전, 도입전이라면 간략한 정보 등)
+정확한 정보 남겨주시면 해당 버전에 맞는 가이드 및 샘플 전달드리도록 하겠습니다.
+
+ 
+
+",""
+10,[이지스자산운용] dataList column 설정 중 ignoreStatus 설정 문의1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+dataList column 설정 중 ignoreStatus 설정이 있는데, 해당 항목에 대해서 전역으로 설정하고 싶은데, config.xml 에서 설정이 가능할까요?
+데이터리스트에서 chk ID를 체크 박스로 쓰고있는데, 모든화면 동일
+config.xml 에 보면 아래와 같이 dataList 전역 설정부분이 있는데, 붉은 색으로 추가했는데, 적용이 안되서요.
+    <dataList>
+        <removeDummyRowStatus value=""true"" />
+        <removedDataMatch value=""true"" />
+        <keepDataType value=""true"" />
+        <saveRemovedDataDeletedInsertedRow value=""false"" />
+        <keepFilter value=""true"" />
+        <column id=""chk"">
+            <ignoreStatus value=""true"" />
+        </column>
+    </dataList>
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+","안녕하세요.
+
+dataList ignoreStatus 속성은 config.xml 파일에서 설정을 할 수 없습니다.
+
+감사합니다.
+
+",""
+11,datalist에서 특정 데이터 체크1,"<< 개요 >>
+
+datalist에서, 특정 컬럼들의 value에 맞는 값들이 있는지 없는지 체크하고 싶은데,
+
+보니까 getMatchedArray 라는 메소드들이 있는데
+
+한가지 조건으로만 체크할 수 있더라구요.
+
+col1, col2의 두가지 조건으로 매칭되는 값이 있는지 체크할 수 있는 방법이 있나요?
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+getMatched 관련 API 는 복수의 조건을 지원하지 않습니다.
+문의주신 것처럼 여러 개의 column과 비교하시려면 반복문으로 직접 코딩하셔야 합니다. 
+
+*
+중복 조건에 해당되는 값의 유무 판별 - getMatchedIndex api 이용하여 샘플코드 작성
+
+//그리드
+name1 name2 name3
+사과     사과    참외
+사과     딸기      배
+딸기    바나나   사과
+
+//샘플코드
+ var row1 = dataList1.getMatchedIndex(""col1"", ""사과"");
+ var row2 = dataList1.getMatchedIndex(""col3"", ""배"");        
+ var rowIndex = matched(row1,row2);
+
+  function matched(a, b) {        
+        var i, la = a.length, res = [];
+        for (i = 0; i < la; i++) {
+            if (b.indexOf(a[i]) !== -1)
+                res.push(a[i]);
+        }
+        return res;
+    };
+
+참고해 주시기 바랍니다.
+감사합니다.
+ 
+
+",""
+12,Fusionchart StackedColumn2D dataList 구조 문의1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+누적 그래프를 사용하기 위해 sample과 같이 dataList를 아래와 같이 설정했습니다.
+Fusionchart_sample.xml에 있는 dataList와 fusionChart로 누적 그래프가 정상 적으로 표시되지 않습니다.
+
+X축 1개 분류마다 Y축 5개정도의 값이 세로로 쌓이는 그래프(StackedColumn2D)로 표시해야 하는데 dataList 구조를 어떻게 넣어야 하는지 문의 드립니다.
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+* dataList 설정
+<w2:dataList baseNode=""list"" id=""dataList2"" repeatNode=""map"" saveRemovedData=""true"" style="""">
+    <w2:columnInfo>
+        <w2:column dataType=""text"" id=""col2"" name=""name""></w2:column>
+        <w2:column dataType=""number"" id=""col3"" name=""vaue""></w2:column>
+    </w2:columnInfo>
+    <w2:data use=""true"">
+        <w2:row>
+            <col2><![CDATA[접수등록]]></col2>
+            <col3><![CDATA[400]]></col3>
+        </w2:row>
+        <w2:row>
+            <col2><![CDATA[가입확정]]></col2>
+            <col3><![CDATA[500]]></col3>
+        </w2:row>
+        <w2:row>
+            <col2><![CDATA[가입증서발급]]></col2>
+            <col3><![CDATA[200]]></col3>
+        </w2:row>
+    </w2:data>
+</w2:dataList>
+
+* fusionChart 삽입
+<w2:fusionchart accessibility=""false"" chartType=""StackedColumn2D"" drawType=""javascript"" id="""" labelNode="""" ref=""data:dataList2""
+    runflashAt=""IE6,IE7,IE8"" seriesNode="""" seriesType=""simple"" style=""height:230px; font-size:16px;"" valueNode="""">
+</w2:fusionchart>
+
+* 결과는 첨부 했습니다.","안녕하세요
+StackedColumn2D 샘플 파일 전달드립니다. 
+감사합니다. 
+ 
+
+",""
+13,multipleDataListDownload 관련 문의3,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+multipleDataListDownload를 이용하여 dataList를 엑셀파일로 다운로드 하려고 하는데
+여기서 위아래로 같은 데이터를 가진 열(rowNum)끼리 병합하는 기능이 가능한지 문의드립니다.
+그리고 디폴트로 가운데정렬이 되는거 같은데 특정 열만 왼쪽/오른쪽 정렬로 바꾸는 기능이 있나요?
+
+예)
+dataList
+{[rowNum: 1. desc: ""테스트123""], [rowNum: 1. desc: ""테스트456""], [rowNum: 2. desc: ""테스트789""], [rowNum: 2. desc: ""테스트000""]}
+
+총 4개의 행에 rowNum이 같은 것끼리 셀병합을 하여
+=============
+rowNum || Desc
+=============
+1             테스트123
+              테스트456
+2             테스트789
+              테스트000
+
+이렇게 출력되게 하고자 합니다.
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+같은 데이터를 가진 열끼리 병합하시려는 경우 해당 컬럼 속성에 colMerge=""true""  설정하신 후
+마찬가지로 엑셀 다운로드 옵션도  colMerge:""true"" 설정하시면 됩니다. 
+
+특정 열만 왼쪽,오른쪽으로 정렬하는 기능은 해당 gridView body 컬럼의 속성으로 textAlign=""left"" /""right"" 적용하시면 됩니다. 
+
+첨부드리는 샘플 파일로 테스트해보시기 바랍니다.
+감사합니다. 
+
+","안녕하세요
+gridView 가 아닌 테이블로 생성하여 엑셀 다운로드 하시려는 경우 문의주신 병합과 정렬에 대한 설정이 지원되지 않고 있습니다. 
+
+감사합니다. 
+
+"
+14,linkedDataList 설정 질문1,"<< 개요 >>
+
+select box1에 dataList 바인딩,
+
+select box2에 linkedDataList 바인딩하고,
+
+select box1의 선택값을 변경했을때,
+
+select box2에서 선택할수 있는 값들을 변경(필터링) 해주고 싶은데,
+
+select box2에 바인딩 되어있는 linkedDataList의 Filter Condition을 어떤식으로 작성해야 할까요?
+
+현재 Filter Condition에
+
+columnName == ref(selectBox1Id.value)
+
+이런식으로 작성된 상태인데, 제대로 분류가 되지 않습니다.
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+
+linkedDataList Filter Condition 설정 관련하여 참고하실 수 있는 테스트 파일 첨부드립니다.
+
+selectbox value 값으로 설정 시, colID == val('select3') 예시처럼 설정하시면 됩니다.
+테스트 파일 참고부탁드립니다.
+
+감사합니다.
+
+",""
+15,DataGrid에서 dataList 값에 따른 cell class 적용 방법 문의1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+DataGrid에서 dataList의 값에 따라 body row의 class를 지정하고 싶습니다.
+그림에서 VS.전원과 VS.전년의 값이 +면 상향 화살표, -면 하향 화살표를 class를 지정하면 표시되도록 디자인하였으나,
+dataList의 값으로 class를 지정하는 방법을 찾지 못해서 질문 드립니다.
+jquery로 지정해봤으나 스크롤이 발생하면 정상적으로 표시가 되지 않습니다.
+
+dataGrid에서 dataList의 데이터 값을 기준으로 class를 지정할 수 있는 방법이 있는지 문의 드립니다.
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+
+datalist의 값의 조건에 따라 그리드뷰 API 중 동적으로 셀에 사용자 class를 적용할수있는 setCellClass를 사용하시면 될것같습니다.
+
+setCellClass( rowIndex , colIndex , className )
+grid 셀에 동적으로 사용자 class를 적용
+name type required description
+rowIndex Number Y 셀의 행번호
+colIndex Number Y 셀의 열번호 혹은 컬럼 아이디
+className String Y td에 적용할 class의 이름
+감사합니다.
+
+",""
+16,Data Grid의 header를 dataList를 사용하여 그리기 문의1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+Data Grid를 이용하여 올해 1월부터 현재월까지의 Column을 가변으로 처리해야 합니다.
+
+row의 데이터는 dataList를 ref해주는 것으로 처리가 가능한데  data grid의 header도 서버로부터 수신된 가변 데이터를 이용하여 그릴 수 있는지 방법이 있는지 문의 드립니다.
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+data grid 를 gridView 컴포넌트로 이해 후 답변드립니다. 또, 버전은 따로 명시해주지 않아 WebSquare5 SP4 기준으로 가이드 드립니다. 
+gridView 헤더를 서버에서 수신받은 데이터를 이용해서 그리려는 경우 동적으로 컬럼을 추가해야합니다. 
+현재 WebSquare Sp4 gridView 스펙상 동적 컬럼 추가는 불가하여 다른 대안으로는 기존 gridview 삭제 후 gridView 자체를 다시 그리는 방법이 있습니다. 
+
+다시 GridView 렌더링하기 때문에 이미 XML 에 정의되어 있는 GridView 보다는 느려질수 있습니다.
+
+샘플 파일 참고하시기 바라며 하단 기술지식 DB 링크도 검토해보시기 바랍니다. 
+
+감사합니다. 
+
+",""
+17,linkedDataList Filter 관련 문의1,"<< 개요 >>
+
+linkedDataList로, 
+
+DataList 데이터를 필터링하여 선택항목으로 표시하는 방법으로 그리드 셀렉트박스를 필터링하여 사용하고있는데요,
+
+추가로 다른 컴포넌트에서도 같은 DataList를 사용하고, 필터링해야하는 상황이 있는데
+
+linkedDataList를 추가로 만들어줘서 사용해야할까요?
+
+기존 사용하고있는 필터 컨디션에 따로 추가하는 표현식이 있을까요?
+
+
+
+
+<< 재현 방법 >>
+
+linkedDataList 의 FilterCondition이 현재
+
+col1 = ref('dlt_test.col1') 로 되어있고 그리드 안의 셀렉트박스에서 쓰고 있는데,
+
+다른 컴포넌트(셀렉트박스나 오토컴플리트)에서도 같은 데이터로 
+
+데이터를 필터링하여 선택항목으로 표시하려고 합니다.
+
+
+
+","안녕하세요.
+
+다른 조건으로 필터를 하신다면 linkedDataList를 추가하여 사용해야 할 것 같습니다.
+
+감사합니다.
+
+",""
+18,datalist 필터 관련5,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+datalist 필터가 적용이 안됩니다. key값이 숫자인 경우.
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+저번에도 문의를 했었는데, 제가 예시를 잘못적어 착오가 있었던 것 같습니다
+
+
+dlt_test.setColumnFilter({type: 'row', colIndex:'sortTurn', key:'0', condition:'and'});
+dlt_test.setColumnFilter({type: 'row', colIndex:'sortTurn', key:'1', condition:'and'});
+dlt_test.setColumnFilter({type: 'row', colIndex:'name', key:'홍길동', condition:'and'});
+
+로 필터링 했을시 홍길동만 제대로 먹고,
+위에 sortTurn은 필터링이 되지 않습니다.
+
+
+
+ps)
+datalist에서 sortTurn의 type은 text로 되어있는데
+consol.log(dlt_test.getColData('sortTrun'));
+을 찍어보면 string이 아닌 numberType인 배열로 담겨있습니다.
+
+
+
+
+
+
+","안녕하세요.
+문의하실때 프로젝트명과 웹스퀘어 사용버전을 명시해주셔야 합니다.
+
+datalist 필터 적용시 key값이 숫자인 경우 안되신다고 문의주셨습니다.
+key값을 변수로 받아서 처리해 보시기 바랍니다.
+
+예시)
+var str1 = dlt_GridList.getCellData( row , ""parentName"" );
+var str2 = dlt_GridList.getCellData( row , ""menuLevel"" );
+dlt_GridList2.setColumnFilter( {type:'row', colIndex:'parentName', key:str1 , condition:'and'});
+dlt_GridList2.setColumnFilter( {type:'row', colIndex:'menuLevel', key:str2 , condition:'and'});
+
+참고사항)
+filterOptions.key
+<String:Y>
+필터의 적용 Data로 type에 정의 한 값에 따라 달라짐. (""row"": 비교할 string 값. ""regExp"":  regExp 객체. ""func"": 사용자 정의 함수.)
+
+안녕하세요.
+
+앞에 보내드린 내용이 문의 주신 내용과 다른것 같아서 한번 더 댓글 회신드립니다.
+첨부드린 샘플(gridView_setColumnFilter.xml) 확인했을때 dataList1 col1 dataType을 number로 해도 정상필터 됩니다.
+
+사용중인 웹스퀘어 엔진에서 확인해보시기 바랍니다.
+
+","프로젝트명: 차세대 전자소송
+웹스퀘어사용버전: 5.0.4(Service Pack 4)
+
+
+
+
+키값을 변수로 받아도 적용이 되지 않습니다.
+
+var str1 = dlt_test.getCellData( 0, ""sortTurn"" ); 
+var str2 = dlt_test.getCellData( 0, ""name"" ); 
+
+console.log(str1); //1
+console.log(str2); //홍길동
+
+console.log(dlt_test.getColData('sortTurn'));
+
+/*
+배열 Array(8)
+0: 1
+1: 2
+2: 3
+3: 4
+4: 1
+5: 2
+6: 3
+7: 0
+*/
+console.log(dlt_test.getColData('name')); //
+/*
+배열 Array(8)
+0: ""최인신""
+1: ""최인신""
+2: ""최인신""
+3: ""최인신""
+4: ""김인신""
+5: ""김인신""
+6: ""김인신""
+7: ""박인신""
+*/
+dlt_test.setColumnFilter( {type:'row', colIndex:'sortTurn', key:str1 , condition:'and'});
+dlt_test.setColumnFilter( {type:'row', colIndex:'name', key:str2 , condition:'and'});
+
+이렇게 작성하면, str1은 적용되지 않고, str2는 적용이 됩니다.
+
+
+dlt_GridList2.setColumnFilter( {type:'row', colIndex:'parentName', key:str1 , condition:'and'});dlt_GridList2.setColumnFilter( {type:'row', colIndex:'menuLevel', key:str2 , condition:'and'});
+
+샘플파일 확인해 보았습니다.
+여기서 문제는, 
+
+var json1을 설정할 때,
+에서 col1 에 값을 ""1""이 아닌, 1을 넣었을 때 문제가 생깁니다.
+
+submission을 통해, mybatis의 number type의 컬럼을 datalist target으로 받아오면,
+datalist의 type(text로 설정되어 있음)과 상관없이, number(아마도)로 받아오는 것 같습니다.
+
+콘솔을 통해 확인하면, ""1""과 같은 string이 아닌, 1 과 같이 number 형식으로 넘어오고있음을 콘솔로 확인했습니다.
+
+이 경우 필터가 적용되지 않습니다. 첨부해주신 소스 파일 json col1을 숫자로 세팅해보시고 테스트해보시면 필터가 적용이 안되는 것을 확인하실 수 있으실 거 같습니다.
+
+
+
+
+
+/*
+배열 Array(8)
+0: 1
+1: 2
+2: 3
+3: 4
+4: 1
+5: 2
+6: 3
+7: 0
+*/
+console.log(dlt_test.getColData('name')); //
+/*
+배열 Array(8)
+0: ""최인신""
+1: ""최인신""
+2: ""최인신""
+3: ""최인신""
+4: ""김인신""
+5: ""김인신""
+6: ""김인신""
+7: ""박인신""
+*/
+
+서브미션을 통해 넘겨주는 쪽에서 String으로 보내는 방식으로 해결했습니다. 답변 감사합니다.
+
+"
+19,treeview 연결된 datalist insertJSON시 트리가 안펼쳐지게 할 수있나요?3,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+treeview 사용 바인딩된 datalist에 row추가시 트리가 모두 펼쳐집니다.
+안펼쳐지게 할 수 있을까요?
+
+datalist.insertJSON(0, jsonData)
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+테스트한 결과 insertJSON을 이용하여 row 추가시 트리가 펼쳐지는 현상이 재현되지 않습니다.
+샘플 첨부드리니 확인 부탁드리며, 추가로 테스트할 부분에 대하여 답변 남겨주시면 추가 검토 진행하겠습니다.
+감사합니다.
+
+","안녕하세요.
+확인해본 결과 파일 첨부합니다.
+속성에 showTreeDepth=""1"" 라는 정보가있어서 무조건 2depth 까지만 펼쳐지게 되어있습니다.
+insertJSON시 접힌상태와 펼쳐진상태가 변함이 없는 옵션이 있는지 궁금합니다...
+
+spanAll(false) 후 작업하면 2depth 까지는 펼쳐집니다.
+테스트 순서 
+1. isOpen(토글) 버튼으로 트리를 접습니다.
+2. Open 버튼으로 목록을 추가합니다.
+
+
+ 
+
+안녕하세요.
+첨부해주신 샘플파일로 테스트한 결과 웹스퀘어에서 tree Depth를 유지하는 속성은 존재하지 않습니다.
+현재로서는, open 버튼 이벤트 안에 treeView1.spanAll(scwin.isOpen); 를 마지막에 추가하여 dataList를 추가한 후에 트리를 접는 방법(spanAll)으로 구현하셔야 할 듯 합니다.
+
+감사합니다.
+ 
+
+"
+20,datalist 필터 적용 문의1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+datalist 함수 중, 필터를 적용하는 함수가 있는데,
+A컬럼의 a의 값과 X컬럼의 x 값에 해당하는 결과값을 필터링하려고 합니다.
+이렇게 두 줄로 중복해서 사용하면, 제대로 적용이 안되는 것 같은데, 다른 방법이 있을까요?
+
+
+row/A/B
+
+0/a/1
+1/b/1
+2/c/1
+3/a/2
+4/b/2
+5/c/2
+
+의 데이터의 경우,
+0번째 row인 a/x 만 출력되어야 합니다.
+
+
+
++++ 추가내용
+
+아래 작성한 두 줄 의 코드 중 윗 줄은 적용이 되고, 아래 줄은 적용이 안되는걸 확인했습니다.
+
+1. dlt_test.setColumnFilter({type:'row', colIndex: 'A', key:'a', condition: and'});
+2. dlt_test.setColumnFilter({type:'row', colIndex: 'X', key:'1', condition: and'});
+
+dlt_test.getAllFilteredJSON() 을 콜솔로 찍어 확인해보니
+colIndex A의 값들은 String으로 읽히는데 (""a"". ""b"")
+colIndex X의 값은 숫자로 찍힙니다. (1,2)
+그 차이일까요?
+
+엣지에서 2번 함수를 을 실행 한 뒤의 콘솔을 보면, X 컬럼의 필터를 적용하면, 
+a.indexOf is not function 에러가 뜹니다.
+
+어쨌든, X컬럼의 필터링이 적용이 되지 않습니다..
+
+
+<< 재현 방법 >>
+
+dlt_test.setColumnFilter({type:'row', colIndex: 'A', key:'a', condition: and'});
+dlt_test.setColumnFilter({type:'row', colIndex: 'X', key:'x', condition: and'});
+
+
+
+","안녕하세요
+colIndex : X 가 아닌 B로 설정 후 확인해보시기 바랍니다. 
+
+dlt_test.setColumnFilter({type:'row', colIndex: 'A', key:'a', condition: 'and'});
+dlt_test.setColumnFilter({type:'row', colIndex: 'B', key:'1', condition: 'and'});
+
+해당 코드 실행하시면 
+0번째 row인 0 /  a / 1  가 출력됩니다. 
+
+",""
+21,"onpageunload 이벤트에서 dataMap, dataList 삭제됨.4","<< 개요 >>
+
+onpageunload 이벤트에서 페이지 종료에 대한 처리를 해야 되는데  다른 컴포넌트는 삭제되지 않고 dataMap, dataList가 삭제됩니다.
+
+dataMap, dataList가 삭제되어 페이지 종료 이벤트에서 submission 처리를 할 수 없습니다.
+
+
+
+
+<< 재현 방법 >>
+
+onpageunload 이벤트가 onwframeunload 이벤트 보다 먼저 실행되어 onwframeunload 이벤트에서도 dataList, dataMap을 받지 못합니다.
+첨부파일 확인 바랍니다.
+
+
+
+","안녕하세요.
+
+onpageunload 는 API 를 통해 화면 이동 또는 wframe 일때 동작합니다. popup 창을 쓴다는 가정하에 창을 닫을 때 이벤트를 발생시키려고 onpageunload 를 사용 가능하긴 하지만, 해당 함수에서는 팝업창의 자원(data나 컴포넌트) 을 사용할 수 없습니다. closeAction 옵션의 사용자 함수로 제어를 권장합니다.
+
+openPopup 을 사용하고 계시다면, closeAction 에 함수를 지정하여 해당 함수를 사용자 정의하여 제어하면 됩니다.
+
+ex)
+var options = {
+  id: ""popup1"",
+  type: ""wframePopup"",
+  modal: true,
+  closeAction: ""scwin.closePopup""
+}
+$p.openPopup(""popupTest_child.xml"", options);
+
+
+감사합니다.
+
+","팝업창 이외에 wframe을 setSrc로 URL을 변경하거나, tab을 제거 할때도 사용합니다.
+
+안녕하세요.
+wframe onwframeunload 사용하여 wframe 이 unload 될 때의 이벤트를 설정하시면 됩니다.
+
+1. config.xml에 wframe ev:onwframeunload 설정 추가
+<wframe>
+        <ev:onwframeunload value=""gcm.clearPage""/>
+</wframe>
+2. gcm.clearPage를 아래와 같이 활용 가능
+window.gcm = {};
+gcm.clearPage = function(src) {
+    console.log(""### Call clearPage"", src, this.id);
+    // this : 삭제처리되기전의 wframe 객체.  src : 삭제 처리대상 wframe의 src
+    ** $p 객체는 해당 이벤트가 발생하는 시점에서 이미 제거됨.
+}
+위와 같은 처리를 통해 wframe 객체를 얻을 수 있고 이를 통해 어떤 wframe이 unload되고 있는지를 알 수 있습니다.
+단 삭제 작업이 이루어진 후에 unload 이벤트가 발생하므로 $p와 관련된 객체는 이미 제거된 상태여서 접근할 수 없습니다.
+
+탭의 경우 onpageunload 이벤트가 발생한 후에 onwframeunload 이벤트가 발생하는 것 같습니다.
+onpageunload 시 dataList 삭제된 상태로 onwframeunload 에서도 dataList를 찾을 수 없어 문제가 있습니다.
+
+"
+22,GridView setFocusedCell + DataList setColumnFilter 버그 제보합니다3,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+
+
+<< 재현 방법 >>
+
+내부망이라 소스 업로드가 어려워 글로 적습니다.
+
+GridView 의 특정(x) 열의 특정(y) 셀에 setFocusedCell 을 적용하고,
+GridView와 연동된 dataList에 setColumnFilter 를 적용하여 
+앞에서 setFocusedCell 를 적용한 열(=x) 은 setFocusedCell 을 적용한 행보다 아래쪽 행(>y) 을 출력하도록 필터를 걸고 - (1)
+setFocusedCell 를 적용하지 않은 열(>x) 은 setFocusedCell 을 적용한 행(=y) 을 출력하도록 필터를 걸면 - (2)
+(1) 필터만 적용되는 현상이 있습니다.
+
+예를 들면, 3번째 열의 첫번째 셀에 setFocusedCell 을 적용하고
+3번째 열에 필터를 걸어 다섯번째 행이 출력되게끔 설정한 뒤(condition:and)
+추가로 4번쨰 열에 필터를 걸어 첫번째 행이 출력되게끔 설정하면(condition:or)
+다섯번째 행만 출력되는 현상입니다.
+
+필터를 걸기 전에 removeFocusedCell() 로 GridView 의 포커스를 제거하거나,
+필터 전체를 제거하고 다시 같은 필터들을 적용하면 정상적용됩니다.
+
+
+","안녕하세요.
+
+우선 말씀해주신 내용으로 테스트 진행하였으며, 해당 내용이 맞는지 확인부탁드립니다.
+좀 더 정확하게는 필터적용 부분을 올려주시면 다시 확인하여 추가 테스트 진행하도록 하겠습니다.
+
+필터를 첫번째 걸고, 두번째 필터 적용 시, condition : or 일 때, 필터가 적용되지않는 현상이 있는데 이 부분을 말씀하시는건지 확인부탁드립니다.
+
+감사합니다.
+
+","제가 말을 헷갈리게 적었었네요 
+필터로 각각 하나의 행만 선택하여 출력했을 때 condition : or 인 두번째 필터가 적용되지 않는 문제입니다.
+첨부한 파일 기준으로 말씀드리면 첫번째 열 세번째 행 (0, 2) 에 포커스가 있는 상태에서
+포커스를 적용한 셀과 같은 첫번째 열(col1)의 다섯번째 행 (rowIdx 4) 에 필터를 걸고 (condition : and)
+위와 다른 열인 네번째 열(col4)의 세번째 행 (rowIdx 2) 에 필터를 걸면 (condition : or)
+세번째 행과 다섯번째 행이 함께 보여야 맞는데 다섯번째 행만 보이는 현상입니다.
+
+유선으로 내용전달드렸습니다.
+
+5.0_4.4144B.20200818.174213_1.8 버전에서 정상동작 확인하였습니다.
+해당 건은 종결처리하겠습니다.
+
+감사합니다.
+
+"
+23,datalist의 JAVASCRIPT 를 통한 컬럼 생성9,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+우선, 질문하실때 양식에 맞춰서 자세히 질문해 주시면 질문의 의도를 파악하는데 도움이 될 것 같습니다.
+샘플파일과 제목으로만 봐서는 질문의 의도를 파악하기 어렵습니다.
+댓글 남겨주시면 추가 검토진행하겠습니다.
+감사합니다.
+
+","화면에서 javascript 를 통해서 datalist 에 column 을 추가하고 싶습니다.
+  row 학교명
+1 가학교
+2 나학교
+
+위와같이 datalist1 에 담아서 가져오고,  datalist2 의 다른 데이터와 합쳐서 보여주고 저장해야합니다.
+  학교1 학교2
+  가학교 나학교
+     
+datalist 에 column 을 동적으로 추가할 수 있는 방법이 있는지 문의 드립니다.
+
+
+
+
+ 
+
+프로젝트 명과 버전정보도 부탁드립니다.
+
+안녕하세요.
+본문에 프로젝트 명과 버전정보를 작성한줄 알았습니다.
+죄송합니다. 
+
+<< 작성자 정보 >>
+진행(투입) 프로젝트 : ( 필수 )  차세대 대법원 전자소송 시스템 구축
+담당자 : 이효진
+연락처 : 010-2906-0126
+
+<< 버전 및 빌드일 >>
+( 테스트하신 웹스퀘어 엔진(미리보기에서 Ctrl+마우스 우클릭 후 디버그 메뉴에서 ""Version 정보"")을 적어주세요.
+브라우저 관련인 경우 해당 브라우저의 상세버전도 기록하여 주십시오. )
+5.0_4.4641B.20220513.162312_1.8
+
+ 
+
+확인 감사합니다.
+첨부해주신 샘플로 보아 실행시 console에 오류가 있었습니다.
+정상 동작하는 샘플로 다시 첨부드리니 확인부탁드립니다.
+수정한 부분은 스크립트에 dataList1 -> dataList2로 수정하였습니다.
+버튼1, 버튼3으로 테스트 진행하시면 됩니다.
+ 
+
+안녕하세요.
+답변이 늦어 죄송합니다.
+
+해당 현상 재현되어 테스트 후 다시 답변 드리겠습니다. 
+감사합니다.
+
+"
+24,dataList 의 삭제된 데이터 목록을 완전히 없앨 수 있나요?1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+saveRemovedData=""true"" 가 설정된 dataList 의 row 를 removeRow() 로 일부 삭제한뒤,
+사용자의 요청이 있으면 getRemovedJSON() 으로 '삭제된 데이터 목록'을 불러와 복구하도록 구현한 상태입니다..
+
+getRemovedJSON() 으로 조회되는 데이터가 있는지 여부를 확인한 뒤 복구를 진행하는데,
+복구 진행 뒤에도 계속 getRemovedJSON() 으로 데이터가 조회되고 있습니다.
+서버와 재통신하여 전체 데이터 목록을 dataList 에 새로 세팅하는 방법외에,
+getRemovedJSON() 으로 조회되는 '삭제된 데이터 목록'을 완전히 제거할 수 있는 방법이 있나요?
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+
+현재 웹 스퀘어 기능에서 getRemovedJSON() 으로 조회되는
+'삭제된 데이터 목록'을 완전히 제거할 수 있는 API 는 제공하지 않고 있습니다.
+양해 부탁드립니다.
+
+감사합니다.",""
+25,dataList oncelldatachange이벤트 관련3,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+그리드뷰에서 소문자 입력시 dataList에 대문자로 변경해서 넣어주고 비지니스 로직을 구현하려 합니다.
+하지만 대문자로 변경해서 dataList에 넣을때 oncelldatachange이 또 호출되어 submission이 두번 실행됩니다.
+이벤트를 강제로 막을 방법이 있는지 아니면 해당 케이스 같은 경우에는 어떻게 이벤트를 처리해야 하는지 가이드 부탁드립니다.
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","","버전은 websquare_5.0_4.4476B.20210805.165314_1.5 이며 
+setCellData를 이용해서 넣었습니다.
+ 
+
+setCellData 이용 시, dataList1_oncelldatachange 두 번 호출되는 것 확인하였습니다.
+해당 사항 버그로 판단되며 연구소에 수정요청드렸습니다. 
+수정된 플러그인 및 스튜디오 릴리즈 시 등록하신 메일로 전달드리도록 하겠습니다.
+감사합니다. 
+
+"
+26,dataList 문의3,"<< 개요 >>
+DataList_A 의 데이터를 DataList_B 로 옮길때 
+DataList_B.setJSON(DataList_A.getAllJSON()); 을 하게 되면 
+DataList_A  에 있던 rowStatus 값까지 복사 하고 싶습니다.
+
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+
+setJSON에 rowStatus를 세팅 가능합니다.
+
+//setJSON(jsonData, append, includeColumns, setRowStatus) : 첫번째 인자로 넘겨주는 jsonData에 rowStatus가 정의되어 있으면 되고, 4번째 인자로 넘겨주는 setRowStatus가 true인 경우에만 jsonData의 rowStatus를 사용하여 값을 세팅합니다. 아래와 같이 사용하시면 됩니다.
+
+//JSON 형태의 2건의 list data를 set.
+var tmpArr = [{""name"":""손예진"",""dept"":""인사"",""rowStatus"":""U""},{""name"":""전지현"",""dept"":""IT"",""rowStatus"":""D""}];
+dataList1.setJSON( tmpArr );
+
+참고할 만한 샘플파일 첨부드립니다.
+
+감사합니다.
+
+","감사합니다.
+
+        var rowStatusArr = [];
+        var jsonData = dataList1.getAllJSON();
+        for (var i in jsonData) {
+            rowStatusArr.push(jsonData[i].rowStatus);
+        }
+
+        dataList2.setData(dataList1.getAllArray().data, true, null, rowStatusArr);
+
+"
+27,gridview datalist에 edit 데이터 반영 함수2,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+유선문의 드린 input에서 지원하는 commit함수 (input이 ref와 연동된 경우 input창에 보이는 값을 ref에 반영하는 함수)
+기능을 gridview에서 지원하는 함수 요청 edit 데이터가 datalist에 반영이 안되어 요청드립니다.
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요. 기술지원팀 입니다.
+
+gridView도 input과 동일하게 데이터 변경시, 변경된 데이터가 dataList에 바인딩 됩니다.
+(변경된 데이터는 ctrl+우클릭에 dataCollection에서 확인하실 수 있습니다.)
+
+문의주신 ""input에서 지원하는 commit함수 (input이 ref와 연동된 경우 input창에 보이는 값을 ref에 반영하는 함수)""
+이 부분에 대한 소스를 첨부해주시면 gridView에서 동일하게 테스트 진행하도록 하겠습니다.
+
+감사합니다.
+
+원격으로 현상 확인도와드렸습니다.
+해당 게시판 글은 종결처리 하겠습니다.
+감사합니다.
+
+",""
+28,linkeddataList filter condition 관련1,"<< 개요 >>
+
+linked dataList filter condition에 if 조건을 걸고싶은데
+
+ 이 조건을 ""01"" == ref('data:dtl_01.RWRPNS_SE')   해당 row의 rowStatus 가 C일때만 조건을 걸려고하는데
+
+if문을 어떻게 사용하는지 알고 싶습니다.
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요 
+문의주신 것처럼 현재 linkedDataList filtercondition을 통해
+""01"" == ref('data:dtl_01.RWRPNS_SE')  가 해당하는 row의 rowStatus 가 C일때만 조건을 거는 부분은 지원하지 않고 있습니다. 
+
+다른 방법으로 setColumnFilter API를 통해 linkedDataList 에 바인딩된 값을 필터링걸어서 구현하시면 될 것 같습니다. 
+샘플 xml 파일 첨부드리니 확인 후 추가 문의사항 있으시면 댓글 남겨주시기 바랍니다.
+
+감사합니다. 
+
+",""
+29,multipleDataListDownload 숫자형 처리 문의3,"<< 개요 >>
+
+WebSquare.util.multipleDataListDownload(options, infoArrParam);
+사용으로 dataList를 excelDownload 기능 사용
+cellData가 숫자형인 경우에 적용 되야할 우측 정렬과 숫자콤마 적용 안됨
+
+grdObj.advancedExcelDownload는 잘되던데 dataList는 안되는 건가요?
+dataType를 number나 BigDecimal로 해봐도 안되네요
+
+<< 재현 방법 >>
+dataList를 WebSquare.util.multipleDataListDownload 함수 사용으로 자료 엑셀 다운로드
+숫자형 text가 우측정렬 ,표시 등 excel Cell type이 숫자형으로 되는지 여부 확인
+
+
+
+","","테스트 파일 첨부드립니다.
+
+샘플을 확인해 보니
+결국 dataList는 숫자 자료형이 excel로 적용 되지 않고
+grid만 숫자 자료형이 적용 되는가 보네요
+
+"
+30,datalist에 들어가는 데이터 중 작은따옴표가 있으면 없어지는데요1,"<< 개요 >>
+
+안녕하세요. 
+DB에서 데이터를 조회 해서 화면에 뿌리는 간단한 화면인데
+
+테이블에는 데이터에 single quote(작은따옴표)가 들어가 있습니다. 조회한 데이터를 서버에서 찍어봐도 다 찍혀있는데
+
+datalist에 담고나서 그 데이터를 보면 사라져 있습니다...dataMap은 안사라지더라구요.
+
+예를 들어 안녕하세요.'ㅇㅇㅇ'님 뭐 요런식으로 데이터가 들어있다하면
+
+dataList에 담기는 순간 안녕하세요.ㅇㅇㅇ님 형태로 작은따옴표만 제거되서 담겨져있습니다.
+
+혹시 다른 설정같은게 있어서 빠지는건가요?
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+
+datalist data에 작은 따옴표 ('') 넣은후 테스트해보았을때 
+정상적으로 출력되는것 확인했습니다
+
+테스트해본 샘플파일 전달드립니다.
+엔진버전도 알려주시면 해당엔진에서 추가적으로 확인해보겠습니다.
+
+감사합니다.
+
+",""
+31,datalist 특정 로우 데이터 자체를 삭제하는 방법이 있을까요?1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+    scwin.stplAgreeProc = function(agreeYn) {
+        
+        currentTabId = this.id;
+
+        dlt_in.deleteRows(0);
+//        dlt_in.undoAll();
+        dlt_in.insertRow(0);
+        dlt_in.setCellData(0, ""userId"", pms.utils.getSessionStorage('USER_ID'));
+        dlt_in.setCellData(0, ""stplId"", $(""#""+this.id).parents('li').children('p').text());
+        dlt_in.setCellData(0, ""stplAgreYn"", agreeYn);
+}
+
+위와 같이 먼저 datalist의 0번째 로우를 삭제하고 
+
+insert 후에 데이터 set 하고 있는데요
+
+scwin.stplAgreeProc 함수를 호출할때마다 row가 삭제가 안되고 계속하서 증가하고 있더라구요
+
+datalist 자체를 삭제할 방법이 있을까요?
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+
+dataListId.deleteRows(rowIndex) API는 행이 삭제되지 않고, 상태 값만 변경해주는 API 입니다.
+removeRow(rowIndex) API를 사용하여 테스트 부탁드립니다.
+
+감사합니다.
+
+",""
+32,multipleDataListDownload 사용시 컬럼 넓이 문의5,"<< 개요 >>
+
+WebSquare.util.multipleDataListDownload( options , infoArr ) 사용시에
+
+1. 엑셀 컬럼의 넒이를 자동 조절하고 싶은데 가능한 방법이 있나요?
+현재 첨부파일과 같이 헤더의 텍스트넓이만큼 너무 좁게 나옵니다.
+
+2. 그리드의 우측정렬 좌측정렬들을 똑같이 가져오고 싶습니다.
+dataList를 엑셀로 만들다보니 불가능한건가요?
+
+
+https://wtech.inswave.kr/websquare/websquare.html?w2xPath=/ws/index.xml&inPath=/ws/qna/qna_view.xml&document_srl=72552
+https://wtech.inswave.kr/websquare/websquare.html?w2xPath=/ws/index.xml&inPath=/ws/qna/qna_view.xml&document_srl=72865
+
+위의 링크의 답변에 따라
+GridView.advancedExcelDownload( options , infoArr ) 를 사용하지 않습니다.
+
+<< 재현 방법 >>
+
+WebSquare.util.multipleDataListDownload({
+    common: { 
+        fileName : fileNm,
+        multipleSheet: ""true"",
+        showProcess : true
+    },
+    excelInfo: [{ 
+        dataListId : grdObj.getDataList(),
+        removeColumns : dltRemoveColumns,
+        wframeId: scwin.param.wframeId
+    }] 
+});
+
+
+
+
+
+","","해당 옵션을 넣으니 첨부파일 내용처럼 이클립스 콘솔에 에러가 납니다.
+엑셀 파일 역시 넓이가 조절되지 않았고요.
+테스트는 저번에 주신 gridView_drilldown_dragdrop_dataList.xml 파일로 하였습니다.
+
+안녕하세요 
+해당 버전(5.0_4.4583B.20220125.191728_1.8)에서 말씀해주신 gridView_drilldown_dragdrop_dataList.xml 파일에 옵션 적용 후 테스트한 결과 정상 동작하는 것으로 확인되었습니다. 
+
+프로젝트 내에 적용된
+config.xml 파일의 <gridview > </gridview> 태그 사이에 있는 속성과 
+websquare.xml 파일의 <excel></excel> 태그 사이에 적용된 속성 등을 첨부해주시면 추가 검토하도록 하겠습니다. 
+
+감사합니다. 
+
+말씀하신 속성 첨부해드립니다.
+감사합니다.
+
+안녕하세요
+첨부해주신 속성 중  websquare.xml 파일의 
+<excel>
+  <download>
+        <dataXMLProvider value=""com.pnu.core.util.websquare.DownloadDataConvertor"" />
+  </download>
+</excel> 
+부분은 프로젝트 내부 클래스이기 때문에 해당 설정 제외하고 테스트한 결과 정상동작합니다.
+감사합니다.
+
+"
+33,datalist 문의3,"<< 개요 >>
+로컬 서버에서 개발db 연동시 dsCovList라는 dataList에 값이 들어갑니다.
+하지만 운영 db로 연동할 경우 dsCovList라는 dataList에 값이 안들어갑니다.
+코드와 db 모두 동일합니다. 개발db에서 운영db로만 연동하면 값이 안들어갑니다.
+콜백함수에서 alert로 값을 확인하면 뜨는데 dataCollection에는 뜨지 않아 어떤 문제인지 모르겠습니다.
+임시로 해결하긴 했는데 근본적인 원인을 찾고 싶습니다.
+
+<< 재현 방법 >>
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+
+로컬 서버와 운영 서버의 websquare.xml 파일의 설정이 동일하게 되어있는지 확인 부탁드립니다.
+해당 파일 위치는  \websquare_home\config 에 있으며, websquare.xml 파일 내에 
+
+<adapter>
+       <request>
+                  <convertType server="""" client="""" />
+       </request>
+       <response>
+                  <convertType server="""" client="""" />
+       </response>
+</adapter>
+
+위의 부분이 동일하게 설정되어 있는지 확인해보시기 바랍니다.  
+
+","확인결과 동일하게 설정되어있습니다.
+
+첨부하신 파일을 보니 콜백함수를 호출하는 부분을 submit-done 안에 처리하셨는지 확인 부탁드립니다.
+submission 실행이 끝나지않았을 시점에 콜백함수를 호출하게되면 개발, 운영 DB 통신에서 시점차이가 발생할수 있을것으로 예상됩니다.
+혹시 원격이 필요하시다면 댓글 남겨주시면 연락드리겠습니다. 
+ 
+
+"
+34,submission target datalist 문의1,"<< 개요 >>
+submission 상에서 target=""data:json,test1"" 로 세팅이 되어 있지만다른 dataList 와 바인딩 하고 싶을때
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+
+
+<< 재현 방법 >>
+같은 데이터의 datalist 를 각각 2 개 만들고 이름만 다르게 test1 , test2 로 한다
+서브미션상에서 target 을 target=""data:json,test1"" 로 설정 한다.
+submitdone 이벤트를 통해 json 데이터를 다른 datalist 로 넣어 주는 방법이 아니라 
+target = ""data:json,test2=test1"" 와 같은 방식의 방법으로 해당 dataList 를 바꿔 주는 방법 이 있는지 알고 싶습니다.
+ps.  서버 상에서  response 에 list 이름을 바꾸는 건 불가능 합니다.
+
+
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하십니까!
+
+해당 기능은 지원을 안하고 있습니다.
+
+감사합니다.
+
+",""
+35,linkedDataList 동적생성문의2,"<< 개요 >>
+$p.data.create() 와 같은 api 로 LinkedDataList 를 동적으로 생성 하는 방법 문의 드립니다.
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하십니까!
+
+동적 linkedDataList 생성 예제 입니다.
+-----------------------------------------------------
+$p.data.create( { 
+                    ""id"" :""linkedDataList1"" , 
+                    ""type"" : ""linkedDataList"" , 
+                    ""option"" : { 
+                        ""baseNode"" : ""vactor"", 
+                        ""repeatNode"" : ""list"", 
+                        ""valueAttribute"" : """", 
+                        ""bind"" : ""subCategoryData"" }
+                });
+                linkedDataList1.setCondition(""filter"", ""subCategoryGubun ==  ref('data:gridViewData.col1')"");
+-----------------------------------------------------
+감사합니다.
+
+","cntl+마우스 오른쪽 눌러도 계속  안나타서 문의 드렸는데 생성은 되는거였군요 감사합니다.
+
+"
+36,datalist에서 다수의 column 값을 합치고 싶습니다. 3,"<< 개요 >>
+개발에 필요한 부분은 절차적으로 1,2번입니다. 
+어떻게 하면 될지요?
+
+1. datalist을 이용하여 DB 데이터를 가지고 옴
+
+2. select박스에 두개의 특정 컬럼 값을 label에  삽입해야 함
+    예)  a 컬럼값 '정의' b 컬럼값 'just' ----> label 에 '정의 [just]'로 넣어야 함. 
+
+3. 현재의 제약사항 
+     . 마이빌더를 전환하는 웹스퀘어로 전환하는 사업으로 가급적 Backend는 수정하지 않음.   
+     . Data를 가져온 상태에서 해결 방법을 찾아야 함 
+
+
+
+
+","안녕하십니까!
+
+문의하신 selectBox 라벨명 변경과 관련 customFormatter 속성을 이용한 샘플을 첨부 합니다.
+
+감사합니다.
+
+","customFormatter 를 사용할 경우에는 lable값과 value 값만 가지고 컨트롤을 할 수 있습니다. 
+요청드린 내용은  value 값은 datalist에서 한개의 column을 사용하고, lable의 경우 두개의 column 값을 이용하고 싶은것 입니다. 
+이 두개의 column은 value로 사용한 것을 이용하지 않습니다. 
+
+[참고]
+customFormatter에서 value값을 통해 datalist를 for문을 이용하여 필요한 값을 넣는 것으로 구현은 하였으나, 
+웹스퀘어에서 조금 더 편리한 방법(제공되는 기본 기능)이 있는지 문의 드린 것입니다.  
+
+보통 쓰는 기본적인 기능이 아니라 직접 구현하신게 맞는거 같습니다.
+기본 기능으로 제공하는것은 없습니다.
+감사합니다.
+
+"
+37,DataList Filter 전체선택 event2,"<< 개요 >>
+문의
+DataList의 onaftercolumnfilterchange, onbeforecolumnfilterchange 이벤트 문의
+
+원인
+첨부파일과 같이 전체선택을 눌렸을시 위에 두 이벤트가 실행되지 않는 현상이 발생합니다.
+나머지 값 선택, 해제 또는 전체선택 해제시에는 두 이벤트가 실행됩니다.
+전체 선택을 누를때만 이벤트가 발생하지 않습니다.
+
+결론
+전체선택을 누를시 이벤트를 발생시키고 싶습니다.
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+","안녕하세요.
+
+해당내용 관련하여 엔진 버그를 확인하였습니다.
+2021년 5월 28일 이후 엔진에서 수정사항 반영되었으며 메일로 최신엔진 전달드리겠습니다. 
+
+감사합니다.
+
+","해결했습니다. 감사합니다.
+
+"
+38,스케줄캘린더에 contextmenu 구성 여부 및 dataList 이벤트와 관련하여 문의드립니다.,"<< 개요 >>
+
+1. 대법원 전자소송 대시보드 좌측에 스케쥴 캘린더를 구성하는데 스케쥴 켈린더에 마우스 우클릭시 컨텍스트 메뉴가 붙을 수 있나요?
+현재  gridview의 contextmenu속성을  true로 하면  contextmenu를 구성할 수 있다고 알고 있습니다.  대법원 전자소송 실무 담당자가 스케쥴 켈린더에도  contextmenu를 구성할 수 있는지 문의를 하였습니다.
+
+2-1) datacolledtion 중 dataList에서 원본데이터가 변경되면, 변경된 데이터를 캐치하는 이벤트가 무엇인지 문의하였습니다.
+2-2) datacolledtion 중 dataList에서 한 row가 변경되면,  변경된  row의 정보를 넘겨주는 api가 존재하는지 문의하였습니다. 
+
+
+감사합니다.
+
+
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","",""
+39,두 개의 datalist 값 비교1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+datalist를 두개를 이용하여 각 datalist의 column 값을 비교하여 버튼이벤트에 따라 행삭제 , 행추가 기능을 구현하고 있습니다. 
+예를들면 A라는 DATALIST의 BGIN_DATE 컬럼과 B라는 DATALIST의 BGIN_DATE를 비교하여, 
+A의 DATALIST에 20211001 , 20211102 값의 데이터가 있고 B의 DATALIST에는 20211101 값의 데이터가 있을경우 
+B의 DATALIST에 행추가 기능을 구현까지는 실행하였습니다. 
+
+하지만 행삭제에서는 어려움이 있어 문의 드립니다. 
+
+구체적으로, 
+A의 DATALIST에 20211001 값의 데이터가 있고 B의 DATALIST에는 20211101, 20211102 값의 데이터가 있을경우  
+B의 DATALIST에서 20211102 값을 가져와서 따로 이벤트를 걸어줄수 있는 구현 방법이 있을까요? 
+
+결론은 
+두개의 DATALIST 를 비교해서 서로 다른값만 가져오고싶습니다. 
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하십니까!
+
+dataList 객체를 사용하여 비교하는 API는 현재 구현되어 있지 않습니다만
+
+dataList 을 비교하시는 방법은
+
+dataList을 json 으로 만드신후 json 비교 함수를 만들어 사용하시면 될거 같습니다.
+
+테스트한 샘플 첨부합니다.
+
+감사합니다.
+
+ 
+
+",""
+40,DataList option saveRemovedData 디폴트 값에 대해서1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+DataList 에서 saveRemovedData 라는 옵션의 디폴트 값이 true 로 되어 있는데, 디폴트 값을 false 로 바꿀 수 있는 방법이 있을까요?
+
+이전에 프로젝트에서는
+config.xml 에 아래와 같이 설정값이 넣어져 있고 따로 설젇을 안했는데 ( <- 프로젝트 공통팀에서 처리 )
+여기에서는 해보니 안되네요.
+뭔가 추가로 처리해 줘야 되는 부분이 있을까요?
+프로젝트 진행 중 새로 들어오시는 분들이 이 설정 때문에 고생들을 하셔서 문의 드립니다.
+이 옵션이 true 로 되어 있는 경우, 그리드에서 항목 삭제 시 화면에서는 안 보이지만 서버로 request 를 날리면 삭제된 건들까지 같이 날라갑니다.
+
+<dataList>
+    <removeDummyRowStatus value=""true"" />
+    <removedDataMatch value=""true"" />
+    <keepDataType value=""true"" />
+    <saveRemovedData value=""false"" />
+</dataList>
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요.
+
+config.xml 위에 적어주신 방법으로 dataList 안에 saveRemovedData 값을 false로 설정을 해주시고,
+ex) <saveRemovedData value=""false"" />
+
+소스상에서 dataList에 있는 saveRemovedData=""true"" 속성을 지우고 테스트 부탁드립니다.
+
+변경 전 : <w2:dataList baseNode=""list"" repeatNode=""map"" id=""dataList2"" saveRemovedData=""true"">
+변경 후 : <w2:dataList baseNode=""list"" repeatNode=""map"" id=""dataList2"">
+
+감사합니다.
+ 
+
+",""
+41,AliasDataList 에서 부모에서 자식 데이터리스트 참조시1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+부모에서 자식 데이터리스트를 참조하기 위해서
+?????부모창에서 aliasDataList 로 자식의 데이터리스트를 링크를 걸었습니다.
+??????이경우 알리아스 데이터리스트를 확인해보면(getAllJson) 데이터가 나오지 않습니다.
+?????알리아스데이터 리스트를 refresh를 해야 데이터가 보입니다.
+(자식에서 알리아스데이터리스트 생성후 부모 데이터를 참조시는 정상적으로 데이터가 표시가 됩니다.)
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+w1.xml(부모) 파일에 w2.xml (자식)을 wframe 으로 생성.
+??????w1에서 알리아스 데이터리스트 로 w2(자식)의 데이터리스트를 참조하게 생성.
+자식의 빌드일자식의에 값이 생성및 변경 되었을때, 부모의 알리아스 데이터의  값이 나오는지 확인","안녕하세요
+aliasDataList 는 top 또는 parent 의 dataList 만 접근 가능합니다
+현재 자식 객체 참조는 지원하지 않습니다
+
+# API
+Scope 환경에서 메인(혹은 부모) 화면에 있는 DataList를 참조할 수 있는 기능을 제공.
+  scope
+메인(혹은 부모) 페이지에 존재하는 참조 대상 DataList의 ID. (부모만 참조 가능하며 자식, 형제(sibling) 참조는 미지원.)
+참조 대상 DataList의 ID를 상대 경로 혹은 절대 경로로 지정 가능.
+참조 대상 DataList를 찾을 수 없거나, 타입이 DataList가 아닌 경우 빈 데이터를 사용.
+(사용 예)<br />
+ (1) 최상위페이지에 있는 dataList1_main1 참조 (상대 경로) scope=&quot;../../dataList_main1&quot;<br />
+ (2) 최상위페이지에 있는 dataList1_main2 참조 (절대 경로) scope=&quot;/dataList_main2&quot;/<br />
+ (3) 상위 페이지에 있는 dataList1_wframe1 참조 (상대 경로) scope=&quot;../dataList_wframe1&quot;<br />
+ (4) wframe1에 있는 dataList1 참조. (절대 경로) scope=&quot;/wframe1/dataList1_wframe1&quot;/
+
+감사합니다
+
+",""
+42,dataList response data key값 변경 문제1,"<< 개요 >>
+
+dataList 형태의 데이터, response 데이터에서 key값이 변경 되는 현상
+ex)
+Result result = new Result();
+    result.setData(""dl_CmdtMetaSearch"", cmdtMetaSearch);
+
+*backend 전달 데이터
+dl_CmdtMetaSearch=[CmdtMetaSearch(cProdtSeq=20200606)]
+
+*response 데이터
+{""dl_CmdtMetaSearch"":[{""cprodtSeq"":""20200606""}]}
+
+*화면
+dataList - keyId : cProdtSeq
+
+key값 변경으로 데이터 매핑이 안되는 문제 입니다.
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+서버에서 내려주는 컬럼명과 매핑하려는 dataList 의 컬럼명은 동일해야 합니다
+이 내용이 아니시라면 좀더 자세한 설명 부탁드립니다
+감사합니다
+
+",""
+43,"부서AutoComplete, 사원AutoComplete LinkedDataList1","<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+ktc 차세대
+
+부서코드를 선택했을때 (autoComplete)   사원정보는 해당 부서만 조회(autoComplete)
+
+ldt_fctryEmpList 라는 LinkedDataList의 fileter Condition에 넣었을때 제대로 작동을 하나
+deptCd ==  val( 'acb_fctryAudtDeptCd' ) 
+저장후에는 해당 사원정보의 값이 autoComplete에 값이 선택이 되지 않는 현상이 발생하고 있습니다
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+","안녕하세요
+저장후에 어떤 작업을하는지 의심되는 부분이 있는지 자세하게 알려주셔야 검토가 가능합니다 올려주신 소스만으론 파악이 어렵습니다
+저장후 autocomplete itemset 의 데이터가 변경되거나 새로 설정하는지도 확인해야 합니다
+혹시 저장후 재조회 또는 autocomplete 의 itemset 이 변경된다면 setNodeSet API 를 다시한번 호출해보시기 바랍니다 => acb_fctryAudtEmpNo.setNodeSet('data:ldt_fctryOneEmpList','empNm','empNo');
+
+추가로 현재 사용중이신 자세한 웹스퀘어 엔진 정보를 알려주셔야 합니다
+감사합니다
+
+",""
+44,selectbox 선택 후 nodeset dataList 값에 clearFilter 호출 시 오류 발생2,"<< 개요 >>
+
+selectbox 선택 후 nodeset dataList 값에 clearFilter 호출 시 오류 발생
+
+
+
+<< 재현 방법 >>
+
+selectbox 선택 후 값조회
+clearFilter 호출 후 값조회
+","안녕하세요
+올려주신 샘플 테스트하여 제가 확인한 내용과 동일한건인지 확인 부탁드립니다
+오류라고 말씀하신 내용에 설명 부탁드립니다
+감사합니다
+
+유선으로 현상 확인하였습니다
+검토후 엔지니어 통해 연락드리겠습니다
+
+",""
+45,datalist getMatchedIndex 다중 값 관련1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+datalist의 여러조건과 일치하는 값에 대한 index정보를 추출하기 위함
+
+
+<< 재현 방법 >>
+dataList1.getMatchedIndex(""dept"", ""인사"");
+를   dept가 [인사]인  rowindex를 가져올수 있으나
+
+만약
+dept가 [인사] 이고 rnk가 [대리] 인  
+rowindex를 추출하고자 한다면 어떤식으로 해야하는지 문의드립니다
+
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+","dataList1.getMatchedIndex API는 한 개의 column만 적용됩니다. 
+
+문의주신 것처럼 여러 개의 column과 비교하시려면 loop문으로 돌리셔서 직접 코딩하셔야 합니다. 
+
+예시 코드 ) 
+var row1 = dataList1.getMatchedIndex(""col1"", ""인사"");
+var row2 = dataList1.getMatchedIndex(""col2"", ""대리"");        
+var rowIndex = same(row1,row2);
+
+function same (a, b) {        
+        var i, la = a.length, lb = b.length, res = [];
+        for (i = 0; i < la; i++) {
+            if (b.indexOf(a[i]) !== -1)
+                res.push(a[i]);
+        }
+
+        return res;
+    };
+
+감사합니다. 
+
+",""
+46,그리드에 datalist 바인딩9,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+<부모 그리드>
+부모 row1
+부모 row2
+<자식 그리드>
+child row1
+child row2
+child row3
+child row4
+위와 같이 부모-자식 그리드가 구현되어 있을 때,
+부모 그리드에서 행(focus) 변경이 있을 때 자식 그리드 datalist를 조회하고 바인딩 하는 구조로 구현한 경우입니다.
+
+이 경우 가끔 부모 그리드에서 행(focus) 변경을 계속 하다보면 자식 그리드에 서버에서 새로 조회되어 온
+datalist가 바인딩이 안되는 경우가 종종 발생합니다.
+
+부모 그리드에 행이 변경되었을 때 자식 datalist를 조회하는 서버통신도 전부 정상적으로 진행되었으나,
+화면 자식 그리드에 불러온 datalist를 바인딩 못하는 현상이 발생하여
+부모 그리드 선택 데이터와 자식 그리드 출력 데이터가 서로 상이하게 되는 현상이 발생합니다.
+
+저희쪽에서 구현한 소스로는 원인분석이 되지 않아 혹시 웹스퀘어 자체적으로 이상이 있는지 문의합니다.
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+","안녕하세요.
+
+테스트 할 수 있도록 관련소스 첨부파일 부탁드립니다.
+
+안녕하세요
+원격 또는 소스 제공 가능하시면 연락 바랍니다 1522-1421
+또한 버전을 알려주셨는데 이클립스의 버전 같습니다
+브라우저 화면을 띄우신후 CTRL+마우스 우클릭시 버전정보 항목의 정보를 알려주시기 바랍니다
+자체적으로 최신 버전에서 테스트시 일반적인 상황에서는 문제가 보이지 않았습니다
+감사합니다
+
+안녕하세요
+WqModel 클래스를 컨트롤러단에서 싱글톤으로 사용하고 있는걸로 파악되어
+비슷한 사례가 있어 메일로 내용 공유드렸습니다
+감사합니다
+
+","저희쪽에서 사용하는 소스를 첨부하기에는 무리가 있어보여 간단하게 구현한 소스만 설명드리겠습니다.
+
+예를들어
+
+Table_01(부모테이블)
+Column Name PK
+col01 Y
+col02 N
+
+Table_02(자식테이블, Table_01의 col01(PK) 참조)
+Column Name PK
+col01 Y(FK)
+col03 Y
+col04 N
+
+이런 구조로 존재한다고 가정하면
+
+부모그리드 Select 쿼리
+Select *
+  From Table_01;
+
+자식그리드 Select 쿼리
+Select *
+  From Table_02
+ Where col01 = #{col01};
+
+로 그리드와 데이터리스트를 각각 구현하였을 때
+
+부모그리드에 대해서
+onrowpositionchange() 함수내에 부모 데이터리스트의 row값이 변경되었을 경우 해당 row의 col01 값을 ref 하여
+자식그리드를 조회하고 조회된 결과를 자식 그리드에 바인딩하는 기능입니다.
+
+Table_01(부모테이블) 데이터
+01 TEST01
+02 TEST02
+
+Table_02(자식테이블) 데이터
+01 1 TEST01
+01 2 TEST02
+02 1 TEST03
+02 2 TEST04
+02 3 TEST05
+02 4 TEST06
+
+2개의 테이블에 대해 데이터가 위와 같이 존재한다고 하였을 때
+
+부모그리드에는 2개의 row 데이터가 바인딩되어 조회될테고
+부모그리드 1행에 포커스가 이동하게 되면 onrowpositionchange() 함수가 동작하여
+자식그리드를 조회하는 내용입니다.
+
+따라서 부모그리드 1행에 포커스가 주어졌으면 자식그리드는 2개의 row 데이터가,
+2행에 포커스가 주어졌으면 자식그리드는 4개의 row 데이터가 바인딩되어 보이게 될겁니다.
+
+이때, 부모그리드 1행과 2행을 반복적으로 이동하다보면
+부모그리드 1행에 포커스가 가있음에도 불구하고 자식그리드에는 부모그리드 2행에 해당하는 자식이 출력되는 현상이 발생합니다.
+서버에선 정상적으로 부모그리드 1행에 대한 조회를 정상적으로 진행했음에도 불구하고
+그리드 내용이 잘못보이는 현상이 있어 사용자 입장에서 잘못된 데이터를 조작하는 현상이 종종 발생하여
+개발자가 구현한 소스를 분석하여 원인을 찾아보았으나 큰 소득이 없어 문의남깁니다.
+
+
+
+
+ 
+
+웹스퀘어 버전
+4.5.2v 으로 확인되었습니다 감사합니다
+
+WebSquare Runtime Engine Version : 5.0_2.2994B.20180319.163854_1.8
+
+안녕하세요.
+문의를 남겼던 지난주에 목요일,금요일은 제가 자리를 비웠어서 이제 답변 남기게 되었습니다.
+
+일반적으로 저희쪽 프로젝트에서 submission을 구현하기 위한 소스를 아래에 첨부했습니다.
+또한 이해를 돕기위해 오류현상 화면을 캡쳐하여 첨부하였습니다.
+
+감사합니다.
+
+구현소스 수정해서 새로 등록했습니다. 확인부탁드립니다.
+
+안녕하세요
+
+개발자도구(F12)를 통해서 요청에 대한 Response를 확인해봤는데요.
+
+target이 지금 잘못 받아오고 있는걸로 보입니다.
+
+현재
+W_SelectTrans(""sbm_selectRdngRightTgetList"",""/su/sd/selectRdngRightTgetList.do"",""dma_RdngRight"",""dlt_RdngRightTgetList"",
+                        ""scwin.sbm_selectRdngRightTgetList_submitDone"","""","""");
+을 호출했을 때
+target은 dlt_RdngRightTgetList 인데
+제가 위에서 말한 오류현상이 발생했을 때 아래 캡처사진처럼 다른 target이 Response 되고 있습니다.
+
+
+
+ 
+
+제가 여러방면으로 테스트하고 확인해본 결과
+한 행위에 대해서 2개 이상의 조회통신을 요청하는 경우 target이 다른 조회통신의 target으로 변경됨으로써
+해당 오류가 발생하는걸로 예상이 되는데 확인하시면 연락주시면 감사하겠습니다.
+
+"
+47,dataList의 dataType 동적 변경1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+DataCollection에 dataList의 dataType을 동적으로 변경할 수 있는 방법이 있는지 궁금합니다.
+
+감사합니다 :)
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+동적으로 DataCollection 을 재성성하시면 가능합니다
+GridView 의 경우 dataList 를 변경하시려면 GridView 컴포넌트도 재생성하셔야 합니다
+버전 정보를 기재해주시지 않아 SP4 기준 샘플 첨부하니 참고바랍니다
+DataCollection 재생성은 API 문서의 $p.data 항목을 참고하시기 바랍니다
+
+# API 위치
+1) https://wtech.inswave.kr/
+2) Documentation - API - $p.data
+
+감사합니다
+
+",""
+48,DataList 를 DataMap으로 바인딩 할수 있는 방법2,"<< 개요 >>
+
+DataList 를 DataMap으로 바인딩 할수 있는 방법이있나요??
+
+alias_dsSel : datalist
+dsOutP  : datamap
+dsOutP.setArray(alias_dsSel.getObj());
+dsOutP.setJSON(alias_dsSel.getRangeJSON(0, 0));
+
+이런방식으로  바인딩하고 싶습니다.
+확인 부탁드립니다.
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+dataMap 은 단건 데이터만 설정 가능합니다
+
+예시)
+# dataList 의 첫번째 데이터를 설정
+dataMap1.setJSON(dataList1.getAllJSON()[0]);
+
+# JSON 단건 설정
+var tmpData = { ""name"" : ""웹스퀘어"" };
+dataMap1.setJSON( tmpData );
+
+# Array 타입으로 컬럼 데이터 설정
+dataMap1.setArray( [""웹스퀘어"",""서울시""] );
+
+감사합니다
+
+","답변감사합니다.
+
+"
+49,그리드 datalist 동적 바인딩 문의2,"<< 개요 >>
+제너레이터 에 gridview 를 여러개 복사 하고 datalist 를 동적으로 바인딩 하는 방법 문의 드립니다.
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","","첨부합니다.
+
+"
+50,"dataMap, dataList 등 DataCollection 하위 태그들을 js로 생성하는 방법2","<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+DataCollection 하위에 사용되는 dataMap, dataList 등을 마크업 형태가 아닌 Javascript로 동적 생성이 가능한가요?
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","$p.data.create API 로 생성 가능합니다.
+
+자세한 내용은 https://wtech.inswave.kr/ 에서 $p.data.create 로 검색 하시면 동영상 가이드 및 API 가이드 에서 확인 하실 수 있습니다.
+
+","답변 감사합니다. 진행해보고 문의사항 있으면 다시 문의드리겠습니다.
+
+"
+51,dataList컴포넌트 getRowPosition 버그 수정 요청3,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+gridview에서 검색을 통해 데이터가 나온 상태에서 특정 Row(행)를 클릭한 뒤 재검색 후 동일한 Gridview컴포넌트의 동일한 Row(행)을 선택할 경우 dataList.getRowPosition(); 을 수행하면 null이 반환되는 버그가 있습니다.
+
+즉, 최초 조회 시 나온 데이터 기준으로 5번째 행을 선택했다가 재조회 후 나온 데이터 기준으로 동일한 5번째 행을 선택하면 getRowPosition함수 수행 시 null값이 회신됩니다.
+
+만약 특정 Row(행) 선택 후 재검색하여 나온 데이터 기준으로 이전에 선택했던 행과 다른 행을 선택하면 getRowPosition()함수가 정상적으로 동작합니다.
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요. 이수경 연구원입니다. 
+재현결과 dataList 컴포넌트의 getRowPosition api는 버그로 보여집니다. 연구소에 검토 후 회신드리도록 하겠습니다. 
+
+gridView에 포커스 된 rowIndex를 사용하신다면 gridView.getFocusedRowIndex API를 사용하여 주시길 바랍니다. 
+
+getFocusedRowIndex( )
+:포커스가 위치한 셀의 rowIndex를 반환.
+Return
+type         description
+Number    포커스가 위치한 셀의 rowIndex
+
+","dataList 객체의 getRowPosition이 맞습니다.
+
+"
+52,linkedDataList의 설정 문의2,"<< 개요 >>
+
+linkedDataList의 속성중에 Filter Condition과 Sort Condition 설정 방법을 문의 합니다.
+
+각 속성에서 사용가능항 API나 방법이 API문서나 기술지식 DB에 거의 없다시피 합니다.
+
+그나마 필터에 관련된 부분은 약간이나마 존재하는데 소트에 관련된건
+
+sort 함수를 이용하는 방법만 있습니다. condition에 직접 기술해서 사용할 수 있는 방법을 알고 싶습니다.
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+sortCondition 에서 사용 가능한 예시를 알려드립니다
+
+// w2:condition 속성 설정
+<w2:linkedDataList id=""linkedDataList1"" bind=""dataList1"">
+    <w2:condition type=""sort""><![CDATA[DESC('col1, col2')]]></w2:condition>
+</w2:linkedDataList>
+
+// 오름차순 정렬
+ASC( 컬럼명 ) - 해당 컬럼을 기준으로 오름차순 정렬.     
+(예) sortCondition = ASC('col1')""
+    
+// 내림차순 정렬    
+DESC( 컬럼명 ) -     해당 컬럼을 기준으로 내림차순 정렬.
+(예) sortCondition = DESC('col1, col2')
+
+// setCondition API 정렬 예제
+var sortCondition = ""ASC('col1, col2')"";
+linkedDataList1.setCondition(""sort"", sortCondition);
+
+감사합니다
+
+","감사합니다 
+
+"
+53,wframe 사용시 부모 페이지에서 자식 dataList를 가져오는 방법1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+부모창에서 wframe으로 open 한 자식창에 있는 iframe의 dataList를 가져오고 싶습니다..
+어떻게 해야하나요?
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+wframe1.getWindow().iframe1.getWindow().scwin.test(); 와 같이 접근 가능합니다
+각 컴포넌트는 getWindow API 를 지원하며 사용법은 아래와 같습니다
+
+// (예제)
+// 부모 화면에서 wframe1 내부의 ""input1"" 컴포넌트에 접근
+// 해당 컴포넌트의 값을 ""WebSquare5""로 설정.
+wframe1.getWindow().input1.setValue(""WebSquare5"");
+
+// IFrame 페이지에 있는 input1 컴포넌트에 접근하여 value값 반환 받고자 할 때
+var retObj = iframe1.getWindow();   //iframe에 정의된 페이지의 window 객체 반환
+var tmpRs = retObj.input1.getValue();   //ifrmae에 정의된 input1 컴포넌트의 value값을 API를 이용하여 꺼내옴
+
+감사합니다
+
+",""
+54,datalist 변환오류 질문드립니다3,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+현재 2버전의 웹스퀘어를 5버전의 웹스퀘어로 컨버전하여 작업중에 있습니다.
+
+그러다 보니 자바파일이나 DB, 쿼리단은 그대로 사용을 하여 개발중에 있는데 
+
+기존에는 json형식이 아니였는데 이번에는 datacollection를 이욯하여 datalist를 넘기다 보니 
+
+빈 datalist인 경우 nullpointer 오류가 발생합니다 .
+
+자바파일을 고치면 되지만 현업에서 되도록 자바파일은 고치지 말고 빈 datalist가 넘어왔을 경우 무시하고  넘어가버리게
+
+요청을 합니다.(submission에서 안넘기면 에러가 안납니다.)
+
+방벙이 있을까요?
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+유선으로 서버 통신 직전 dataList 를 체크하여 가공할 수 있도록
+config.xml 의 preSubmitFunction, externalHandler 를 가이드 드렸습니다
+서버단 소스를 수정하지 않고 request 데이터를 가공이 필요할 경우에는
+preSubmitFunction, externalHandler 속성에 공통 함수를 설정하여 활용하시기 바랍니다
+감사합니다
+
+config.xml preSubmitFunction 속성 관련 샘플 코드입니다
+참고바랍니다.
+
+gcm.PreSubmitFunction = function(submissionObj) {
+    //현재 submission 의 ref로 전송할 요청데이터
+    var reqData = WebSquare.ModelUtil.getRefToReqData( submissionObj );
+    
+    //요청데이터에 임의의 데이터 추가. 이 부분을 원하는 데이터로 가공하시면 됩니다. 
+    var jsonObj = JSON.parse(reqData);
+    for (var i in jsonObj) {
+        if (jsonObj[i].length <= 0) {
+            jsonObj[i] = [{""col1"":""data is null""}];
+        }
+    }
+
+    //submission 객체의 요청데이터에 최종적으로 추가
+    submissionObj.requestData = jsonObj;
+};
+
+감사합니다
+
+","감사합니다
+
+"
+55,generator사용시 dataList문제3,"<< 개요 >>
+설문 항목의 갯수 만큼 동적으로 생성하기 위해 generator를 사용하여 GridView를 여러개 생성 한뒤 
+각 GridView에 연결된 데이터를 각각 다르게 보여주기 위해서 linkedDataList로 설정했는데 데이터의 갯수는 맞게 나오는데
+모든 데이터의 각 셀마다 undefined으로 보여집니다.
+컨트롤+우클릭으로 DataCollection을 보면 데이터는 정상적으로 존재합니다.
+ 
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+1.Generator로 GridView여러개 생성
+var idx = genAnswer.getLength();
+genAnswer.insertChild(idx);
+
+2.생성된 GridView별로 보여질 데이터가 달라서 각 항목별로 필터적용(key값은 나중에 변수로 변경예정)
+dcLinkedResult.setColumnFilter( {type:'row', colIndex:'ORD_SEQ', key:""1"", condition:'and'} );
+
+결과: 데이터의 갯수는 맞게 row가 생성되나 데이터가 undefined로 나옴
+
+","안녕하세요
+gridView 컴포넌트는 generator 컴포넌트 스펙상 반복 생성할 수 없습니다
+동적 gridView 생성은 dynamicCreate API 를 사용하시기 바랍니다
+
+XML 을 포함하거나 반복하여 렌더링되는 컴포넌트는 지원하지 않습니다
+미지원 컴포넌트: Chart, GridView, Menu, Switch, TabControl, TreeView, WindowContainer
+
+감사합니다
+
+","그룹을 동적으로 복사하는 기능은 제공되지 않습니다
+generator 로 group 을 생성하신후 dynamicCreate API 로 그리드뷰를 생성해보시기 바랍니다
+감사합니다
+
+"
+56,submission시 자식 datalist 참조하기1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+1. submission시에 자식 datalist를 참조 할수 있는지 궁금합니다
+submission ref에 ref='data:json, wframeId.datalist'  이렇게 사용시 참조가 안되던데 다른 방법이 있는지 궁금합니다
+
+2. AliasDataMap 이나 AliasDataList가 부모 객체만 참조 가능한 이유가 궁금합니다
+
+3. submission시에 자식 datalist를 참조할수 없다면 자식 datalist 를 부모로 복제해와야 하는데 자식 datalist를 부모로 복제시 rowStatus는 그대로 복제되는게 아니라 R로 생성이 되는데 rowStatus도 그대로 복사하는 방법은 없는지 궁금합니다
+
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+1. 
+<xf:submission id=""sbm_isThisPossible"" ref='data:json, wframeId.datalist' 
+      action=""writeContent.do"" method=""post"" mediatype=""application/json"" encoding=""UTF-8""
+</xf:submission>
+
+2. 
+scope
+참조할 원본 dataMap 객체. 부모만 참조 가능하며 자식, 형제(sibling) 참조는 지원하지 않는다.
+참조할 원본 dataMap를 찾을 수 없거나, 타입이 dataMap가 아닌 경우 빈 데이터를 갖는다.
+
+
+3. parentDataList.setJSON(childDataList.getAllJSON());
+
+
+","안녕하세요
+submission 에서 하위 wframe 의 dataCollection 을 접근하시려는 의도이시나 현재 요건으로는 3번으로 처리가 가장 바람직해보입니다
+scope 개발 환경에서는 부모 또는 메인 frame 에 공통 dataCollection 을 생성하셔서 참조하는것을 권장합니다
+
+1. submission시에 자식 datalist를 참조 할수 있는지 궁금합니다
+submission ref에 ref='data:json, wframeId.datalist'  이렇게 사용시 참조가 안되던데 다른 방법이 있는지 궁금합니다
+> <strictMode value=""false"" id=""mf"" /> 인 경우에는 wframeID_dataListID 으로 접근 가능합니다.
+  단, config.xml 에 strictMode true 설정시 정상 동작하지 않거나 접근이 안될수 있으며
+  이렇게 사용해야하는 이유는 scope 개발시 너무 복잡한 코딩을 제한하기 위한 스펙으로 이해하시면 됩니다
+  
+2. AliasDataMap 이나 AliasDataList가 부모 객체만 참조 가능한 이유가 궁금합니다
+> alias 데이터컬렉션은 strictMode true 사용시 부모 객체에 접근이 가능하도록 제공하는 컴포넌트입니다
+  반대의 경우는 객체 접근 복잡성이 높아져 스펙상 자식 객체 접근을 제공하지 않습니다
+  또한 웹스퀘어5 개발시 객체 참조는 부모 객체만 접근하는것을 권장합니다 
+
+3. submission시에 자식 datalist를 참조할수 없다면 자식 datalist 를 부모로 복제해와야 하는데 자식 datalist를 부모로 복제시 rowStatus는 그대로 복제되는게 아니라 R로 생성이 되는데 rowStatus도 그대로 복사하는 방법은 없는지 궁금합니다
+> 현재 상태값 그대로 복제하는 API 는 제공되지 않습니다 
+  원본 상태값을 참조하여 modifyRangeStatus, modifyRowStatus API 로 변경해주셔야 합니다
+
+감사합니다
+
+",""
+57,datalist 문의드립니다.2,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+퓨전차트의 seriesColumns을 사용하니까 차트에 바인딩된 데이터리스트의 name을 보여주더라고요.
+예를 들어 name, 2020, 1234(데이터리스트의 name, labelNode, 값) 이런식으로요.
+chartType은 MSColumn3D을 사용했습니다.
+근데 이 데이터리스트의 name을 동적으로 셋해줘야 하는데 그런 방법이 있을까요?
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+퓨전차트에서 name 만 변경을 하시더라도 다시 차트를 그려야할듯 합니다
+setChartColumnRef API 로 각 series 에 대한 seriesname 을 설정할 수 있습니다
+
+예제)
+chart1.setChartColumnRef('data:dataList2','Month',""[[{'id':'Year1','seriesname':'2005_1'},{'id':'Year2','seriesname':'2006_1'},{'id':'Year3','seriesname':'Year New_1', 'renderas':'Line', 'showValues':'1', 'parentyaxis':'S'}]]"");
+
+감사합니다
+
+","해결 됐습니다! 감사합니다
+
+"
+58,submission 실행할 때 필터걸린 datalist의 제외된 데이터를 포함시켜서 보내는 방법 문의드립니다.,"<< 개요 >>
+
+필터로 제외된 데이터도 포함시켜서 변경 데이터를 서버로 보내고 싶은데, 방법이 있는지
+
+
+
+<< 재현 방법 >>
+
+var submissionObj = {
+    ""id"" : ""submission1"",
+    ""ref"" : ""data:json,{'id':'datalist1', 'action':'modified'}""
+};
+
+$p.createSubmission(submissionObj);
+
+
+datalist1.setColumnFilter(modified 된 로우를 안보이게 필터건 상태에서);
+$p.executeSubmission(""submission1"");//'action':'modified' 로우 해당 데이타리스트 보내면 필터걸린부분은 제외되는데
+
+
+1. 필터로 제외된 데이터도 포함시켜서 변경 데이터를 서버로 보내고 싶은데, 방법이 있는지,
+
+현재는 서브미션 실행전에 필터를 datalist1.removeColumnFilterAll(); 
+으로 제거하고 서브미션 후처리에서 다시 필터를 거는데,
+필터를 제거했다 다시 걸면, 
+
+2. 해당 데이타리스트에 연결된 그리드뷰의 로우가 늘었다 줄어드는게 눈에 보이는데, 이걸 사용자가 모르게 하고 싶은데
+
+가이드가 있는지 문의드립니다.
+
+
+","안녕하세요
+스펙상 executeSubmission 에서 action: modified 로 설정시에는 filter 된 값만 서버로 전송됩니다
+설정으로 전체 데이터를 전달하시려면 submission 에서 동일한 key 값이 아닌 다른 키값을 설정하시면 어떨까 합니다
+
+# submission ref 속성
+ref='data:json,[{""action"":""modified"",""id"":""dataList1""},{""action"":""all"",""id"":""dataList1"",""key"":""dataList1_all""}]'
+
+또는 action : all 을 설정한 별도의 submission 을 하나더 만드신후 호출하는것도 방법으로 보입니다
+
+감사합니다
+
+",""
+59,datalist 값 일괄변경1,"<< 개요 >>
+
+datalist의 값을 일괄변경하려고 합니다.
+아래의 로직처럼 구현하였는데,
+1. datalist의 count가 많으면 속도가 느려집니다. for문처럼 반복문 말고, 다른방법이 없나요?
+2. 아래방법처럼 구현하면 변경은되는데 콘솔에 오류가 간헐적으로 찍힙니다. (첨부파일 참조)
+
+
+<< 재현 방법 >>
+
+for( var k = 0; k < dl_list.getRowCount() ; k++){
+   dl_list.setCellData(k, ""smbl"", ""*"");
+}
+
+
+","setCellData 로 반복문을 사용하시는 경우 바인드된 컴포넌트의 갱신이 과도하게 발생되어 성능에 지장이 있습니다. 
+아래와 같이 json 을 활용하여 컴포넌트 갱신이 최소화되도록 수정이 필요해 보입니다. 
+
+var jsonData = dl_list.getAllJSON();
+for( var k = 0; k < dl_list.getRowCount() ; k++){
+   jsonData[k][""smbl""] = ""*"";
+}
+dl_list.setJSON( jsonData);
+
+추가로, 첨부주신 오류로그를 보니 pivot 컴포넌트에 사용 중이신 것 같습니다. 
+pivot 은 일반적으로 숫자 데이터의 통계를 나타내는 컴포넌트로 ""*"" 과 같은 문자열 데이터 사용 시 내부적으로 통계수치 계산과정에서 오류가 발생할 수 있습니다. 
+
+",""
+60,scheduleCalendar 에서 datalist 동적변경 문의1,"<< 개요 >>
+
+체크박스 혹은 탭을 사용하여서 원하는 일정을 scheduleCalendar 로 보여주려고하는데요 
+
+   scheduleCalendar.setUserData(""dataList"", ""dlt_mycaseMyList"");
+  이런식으로 변경해야하는지 
+
+                            <w2:scheduleCalendar dataList=""dlt_mycaseMyList"" defaultDate="""" editable=""true"" endColumn=""endYmd"" startColumn=""bgngYmd""  headerLeftBtn=""true""
+                                headerRightBtn=""true"" headerTitle=""true"" id=""schedule1"" idColumn="""" ioFormat=""yyyyMMdd"" lang=""ko"" locale="""" selectable=""true""
+                                style=""width: 100%;height:578px;"" titleColumn=""schdulNm"">
+                            </w2:scheduleCalendar>
+
+
+여기에 dataList 를 박으면 변경을 못하는건가요 여러가지 종류의 일정을 띄울거라서요
+추가로 그런 다중일정할때 선택한거만 띄우고 선택안한거는 감출건데 show/hide 말고 visible 도 있던데 visible 의 차이점은 무엇인가요?
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+현재 동적인 dataList 변경은 지원하지 않습니다
+스케줄을 변경하시려면 addSchedule, removeschedule API 를 사용하시기 바랍니다
+API 관련 문의는 가급적 http://wtech.inswave.kr/ 의 API, 개발자가이드를 참고 바랍니다 
+추가로 문의하신 show/hide, visible(deprecate) 는 컴포넌트 자체를 보여주고 숨기는 API 입니다
+
+간단한 샘플 첨부합니다
+ex) 스케줄 추가/삭제
+
+            var obj = {
+                ""id"":""test123"",
+                ""title"":""test123"",
+                ""start"":""20200921"",
+                ""end"":""20200923""
+            };
+            schdule1.addSchedule(obj);
+            schdule1.removeschedule(""test123"");
+
+감사합니다
+
+",""
+61,aliasDataList 사용법 알려주세요.3,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+aliasDataList 기능을 쓰려고 하는데 업데이트를 한지 얼마 안돼 자료가 없네요.
+
+scope 경로를 잡을때 부모창에서 자식창으로 데이터를 옮기려고 하는데
+부모창 - >main
+scope=""main/dataList1""
+scope=""../main/dataList1""
+scope=""../../main/dataList1""
+
+어떻게 해야 하나요?
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+상대 경로, 절대 경로 2가지를 지원합니다
+SP4 개발 가이드를 확인하시면 다음과 같습니다 
+파트 II. 페이지 / 3. AliasDataCollection
+
+scope: 부모 화면에 있는 참조 대상 DataCollection을 지정. 절대 경로 및 상대 경로 모두 지원.
+(예) 상대 경로: scope=""../dataList_parent""
+(예) 절대 경로: scope=""main/dataList_main2""
+
+감사합니다
+
+샘플 첨부합니다
+절대 경로, 상대 경로는 aliasDataList 의 scope 속성을 참고 바랍니다
+그리고 샘플의 studioSrc 속성은 이클립스 프로젝트의 context root 에 맞게 바꾸시거나 필요 없으시면 삭제하면 됩니다
+
+","감사합니다.
+
+"
+62,linkedDataList 바인딩3,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+SelectBox 4개가 linkedDataList로 연결 되어있는데 submission을 통해 값을 들고와 데이터 바인딩을 했는데 choose Option 없으면 전부 바인딩이 되는데 choose Option이 있을 경우 바인딩이 2개만 되고 나머지는 바인딩이 안됩니다. 이유가 궁금합니다.
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+웹스퀘어 엔진 버전 확인과 샘플이 있으시면 첨부 부탁드립니다
+감사합니다
+
+","웹스퀘어 버전 Version: 5.0.4 
+ 
+
+첨부하신 샘플로는 확인이 어렵습니다
+로컬에서 테스트한 샘플을 첨부하니 테스트해보시고 답변부탁드립니다
+json 파일 첨부가 안되니 data.txt 를 json 으로 변경후 테스트 바랍니다
+감사합니다
+
+"
+63,"dataMap ,dataList 문의 드립니다.1","<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+{
+ ""data"":{
+         items: {
+              item:{ [""id"" : ""0"" ,""name"":""aaa""] ,
+                        [""id"":""1"" ,""name"":""bbb""]
+                       }
+            }
+     }
+
+}
+ 요런구조의 json 데이타를 보내야 하는데 dataMap 이나 dataList 에서 어떻게 key ,value 생성하여야 하나요?
+리턴받을때도 마찬가지구요 
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","submission 의 ref, target을 아래와 같이 지정하여 확인부탁드립니다. 
+ref = 'data:json,[{""id"":""dataList1"",""key"":""data.items.item""}'  -> 요청전문
+target = 'data:json,{""id"":""dataList1"",""key"":""data.items.item""}'  -> 응답전문 
+
+",""
+64,"dataList, dataMap 변경여부 체크 관련 문의드립니다.1","<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+안녕하세요.
+
+프로세스 저장 전에 dataList, dataMap 내의 해당 데이터가 변경이 됐는지 안됐는지를 판단하는 
+
+샘플 스크립트 함수 가이드 부탁드리겠습니다.
+
+변경은 추가, 삭제, 수정 등 내용이며, 변경이 되지 않았을 경우에는 서브미션 처리되는것을 막으려고 합니다.
+
+
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","dataList와 dataMap의 getModified 종류의 API를 사용하여 추가, 삭제, 변경된 데이터를 확인할 수 있습니다. 
+(getModifiedIndex, getModifiedJSON, getModifiedArray 등) 
+
+",""
+65,dataList.setEventPause() 사용 할 수 있나요?1,"<< 개요 >>
+https://docs.inswave.com/websquare/websquare.html?w2xPath=/support/api/ws5_sp4/api.xml
+여기에서  dataList 메소드중에는 setEventPause가 없는데
+또 다른 컴포넌트 도움말 보면 지정한 이벤트를 중단함. (웹스퀘어 컴포넌트 공통.)이라고 되어있고
+쏘스를 봐도 있는것 같긴한데 사용해도 되나요?
+
+이걸 몰라서 bind, unbind 일일히 해줘야 되는것으로 알고 있었습니다...
+","안녕하세요. 기술지원팀입니다.
+
+dataList 에서도 setEventPause API 사용 가능합니다.
+
+상황에 따라 적절한 사용이 필요하며,
+혹시 어떤 케이스에서 사용이 필요해서 어떤 이벤트를 bind, unbind 를 하고 계신지 확인 부탁드립니다.
+ 
+
+",""
+66,조건이 복잡한 데이터 필터 방법 문의 dataList. setColumnFilter1,"<< 개요 >>
+아래의 형태와 같은 dataList가 있습니다.
+(컬럼 및 로우 정보는 간략하게 표시)
+[
+{""COMM_CD"":""C37001"", ""ETC_CD1"":""Ez"", ... ...},
+{""COMM_CD"":""C37002"", ""ETC_CD1"":""TEz"", ... ...},
+{""COMM_CD"":""C37003"", ""ETC_CD1"":""TEz"", ... ...},
+{},
+...
+...
+...
+]
+
+AS-IS시스템은 투비소프트 제품으로 구축 되어 있으며 위데이터를 아래와같은 방법으로 필터링 하고 있습니다.
+(실제 업무보다는 비교적 간단한 필터입니다.)
+Dataset.filter(""(ETC_CD1 != 'Ez' && ETC_CD1 != 'TEz') || COMM_CD=='C37014' || COMM_CD=='C37020'"");
+
+이걸 웹스퀘어 setColumnFilter 메소드를 통해서 표현하는 방법을 알고 싶습니다.
+
+
+<< 추가 정보 또는 예상원인 >>
+자바스크립트의 Array 메소드인 filter를 이용하여 새로운 배열을 만들고, 이걸 필터 걸려는 dataList에 부으면 될것같은데
+웹스퀘어 API를 통해서 하는 방법을 알고 싶습니다.
+arrData.filter(function(obj) {
+    return (obj.ETC_CD1 != 'Ez' && obj.ETC_CD1 != 'TEz') || obj.COMM_CD=='C37014' || obj.COMM_CD=='C37020';
+});
+
+
+감사합니다","fileter type을 function으로 구현하시면 가능합니다.
+구현 샘플 첨부하여 드립니다.
+
+",""
+67,DataList saveRemovedData 속성 관련 문의1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+DataList 에서 saveRemovedData속성에 관하여 문의 드립니다.
+저희쪽에서 submission을 이용하여 데이터 처리시
+서브미션의 Reference에 DataList 지정후 action modified 속성을 지정하여 사용하고 있습니다.
+개발중 datalist의 데이터를 removeAll()로 삭제한 후 서브미션을 날리니 삭제된 데이터가 ""E"" 상태값으로 포함되어 같이 전송되는 것을 확인하여 DataList 에서 saveRemovedData 속성이 있는 것을 알고 사용하였습니다.
+
+현재 개발된 프로그램이 많은 상황에서 saveRemovedData 속성을 일괄로 적용할수 있도록 하기 위해 
+config.xml에 속성으로 지정하려 했는데 dataList를 생성하면 해당 속성이 기본으로 true값이 지정되는 것을 확인하였습니다.
+이와 관련하여 
+
+Q1. DataList 생성시 true값을 지정되지 않도록 하거나 일괄로 적용할수 있는 방법이 있는지 확인 부탁드리며
+
+Q2. 그리고 DataList의 E 상태값이 어떤경우에 사용 되는지 saveRemovedData 속성을 false로 지정시 다른 부분에 영향이 갈수 있는 부분이 
+어떤것들이 있는지에 대해서도 문의 드립니다.
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+컴포넌트 Property 일괄 설정은 Outline 퍼스펙티브에서
+Ctrl 키로 컴포넌트를 다중 선택하여 Property 를 변경하는 방법외 현재 지원되지 않습니다
+또한 config.xml 에서 일괄 설정은 가능하나 우선순위가 (config.xml < 컴포넌트 Property) 이기 때문에
+
+일괄 설정하시려면 울트라에디터와 같은 툴을 이용하여 파일내의 문자를 치환해주신뒤
+/websquare/config.xml 에서 다음과 같이 설정하실 수 있습니다
+    <dataList>
+        <saveRemovedData value=""false""/>
+    </dataList>
+
+그리고 saveRemovedData=""true"" 설정시에는 getModifiedJSON 호출시에 remove 된 Row 정보를 담고 있으며
+알고계신것처럼 submission 호출시 action 을 modified 로 설정시 remove 된 Row 정보를 서버사이드로 전달할 수 있습니다
+
+결국 saveRemovedData=""false"" 설정시에는 remove 된 Row 정보가 서버사이드로 전달되지 않으며
+getModifiedJSON, getModifiedArray, getModifiedXML, getModifiedData 에서 remove 된 Row 정보를 가져올수 없습니다
+단, dataList1.getModifiedJSON({saveRemovedData:true}); 와 같이 호출시에는 remove Row 정보를 가져옵니다
+
+감사합니다
+ 
+
+",""
+68,wframe 함수호출과 동적 dataList생성문제 확인 요청1,"<< 개요 >>
+
+파일업로드 관련하여 공통 화면을 개발하고 있습니다.
+두가지 확인요청을 드리고자 합니다.
+1. 함수호출문제
+2. 동적으로 아래와 같이 dataList를 만들수 있는지요?
+
+
+
+<< 재현 방법 >>
+
+1. 저장화면에 incFileUpload_view.xml라는 wframe을 넣고 initScript를 호출하고 호출되는 incFileUpload_view.xml 화면에서 
+   동적으로 내용을 생성할려고 합니다.
+  ---------부모창의 wframe 소스
+<!-- include file attachment start &inputId=ipt_fileInputId-->
+                        <w2:wframe id=""wf_includefile1"" src=""/common/inc/incFileUpload_view.xml"" initScript=""mFunc.setFileViewInfo('FILE_IDA','PT_BRD', '', '');"" style=""width:100%""> <--initScript 호출이 안됩니다.
+                        </w2:wframe>    
+<!-- include file attachment end-->
+
+---------incFileUpload_view.xml 소스
+        function setFileViewInfo(fieldNm, reqTableNm, refDocId, fileId){
+            alert('draw ============================');
+            makeDataList(fieldNm);
+         }
+
+            //동적으로 datList 생성
+            function makeDataList(fileId, obj){
+                   var orgCol = [
+                       {""id"":""FILE_ID"", ""dataType"":""text""}, 
+                       {""id"":""FILE_SEQ"", ""dataType"":""text""}, 
+                       {""id"":""REF_TABLE_NM"", ""dataType"":""text""}, 
+                       {""id"":""REF_DOC_ID"", ""dataType"":""text""}, 
+                       {""id"":""FILE_TYPE"", ""dataType"":""text""}, 
+                       {""id"":""FILE_NM"", ""dataType"":""text""}, 
+                       {""id"":""FILE_ORG_NM"", ""dataType"":""text""}, 
+                       {""id"":""FILE_PATH"", ""dataType"":""text""}, 
+                       {""id"":""REMARK"", ""dataType"":""text""}, 
+                       {""id"":""FILE_SIZE"", ""dataType"":""text""}, 
+                       {""id"":""FILE_DIS_SIZE"", ""dataType"":""text""}, 
+                       {""id"":""SYS_CD"", ""dataType"":""text""}, 
+                       {""id"":""MENU_ID"", ""dataType"":""text""}, 
+                       {""id"":""USE_YN"", ""dataType"":""text""},
+                       {""id"":""CREATE_ID"", ""dataType"":""text""}, 
+                       {""id"":""CREATE_DT"", ""dataType"":""text""},
+                       {""id"":""UPDATE_ID"", ""dataType"":""text""},
+                       {""id"":""UPDATE_DT"", ""dataType"":""text""},
+                       {""id"":""RESULT"", ""dataType"":""text""}
+                   ];
+                   
+                                  // plan
+                options = {
+                    ""id"" : ""dl_fileSubMst""+fileId,
+                    ""type"" : ""dataList"",
+                    ""option"": {
+                        ""baseNode"": ""list"",
+                        ""valueAttribute"": ""value"",
+                        ""repeatNode"": ""map"",
+                        ""saveRemovedData"":true,
+                        ""useData"": false
+                    },
+                    ""columnInfo"" : orgCol,
+                    ""keyInfo"" : orgCol
+                };
+                $w.data.create(options);
+                                
+            }
+
+
+
+
+","안녕하세요
+화면에 mFunc 라는 객체가 존재하지 않는듯합니다
+mFunc.setFileViewInfo 와 같이 호출하시려면
+mFunc.setFileViewInfo = function() {}; 와 같이 선언하셔야 합니다
+scwin 객체가 있다면 scwin.setFileViewInfo 와 같이 호출하는것을 권장합니다
+감사합니다
+
+",""
+69,linkedDataList filter 적용 안됨 6,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+그리드 1 2 3 4  selectbox 컬럼 linkedDataList 필터가 적용이 안됨
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","참고하실 샘플 첨부합니다
+감사합니다
+
+","이 샘플보고 한건데요
+
+샘플을 첨부해주셨으나 동작하는 샘플이 아니며
+최소 뭐가 어떻게 안되시는지는 말씀해주셔야 도와드릴수 있을듯합니다
+
+ 
+
+참고샘플을 보고 개발을 했으나
+첫번째 셀렉트 박스 만 되고
+나머지 selectbox 컬럼에  
+linkedDataList 필터가 적용이 안됩니다.
+
+up_code_id == 'RCC000000'
+up_code_id == ref('data:dtl_resultList.field_id')
+up_code_id == ref('data:dtl_resultList.measure_nm_id')
+up_code_id  == ref('data:dtl_resultList.form_id')
+
+해당 문의 사항은 serCondition() API를 이용하여 동적으로 필터링하는 방법으로 유선 가이드했습니다.
+감사합니다.
+
+"
+70,makeDataList를 통해 생성된 dataList에 이벤트 바인딩1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+동적으로 생성된 dataList에  oncelldatachange 이벤트를 바인딩 하고 싶습니다.
+
+예) ev:oncelldatachange=""scwin.dc_before_oncelldatachange"" 
+
+그리고 oncelldatachange 의 이벤트가 여러행의 엑셀데이터를 붙여넣기 했을경우에도 발생 하나요?
+
+F1도움말을 참조하면
+
+하나의 셀에 대한 값이 변경된 경우 발생하며 행이 추가,삭제되거나 dataList의 전체 구조가 변하는 경우(setJSON 등)에는 발생하지 않는다.   insertJSON, setRowData 류의 API에 의해 복수개의 cell 값이 한번에 값이 변경되는 경우 또한 이벤트가 발생하지 않으며, 대신 oninsertrow이벤트가 발생한다.
+
+라고 나오는데 여려행 여러셀의 데이터를 변경할 경우에도 이벤트가 발생하는지도 궁금합니다.
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","안녕하세요
+oncelldatachange 관련 문의 답변드립니다
+조금더 상세한 지원은 영업대표를 통해 유지보수 계약 체결후 문의 바랍니다.
+
+1) oncelldatachange 이벤트가 모든 셀에서 발생하는지 문의
+> 발생합니다
+2) 엑셀 붙여넣기시에도 oncelldatachange 발생하는지
+> 발생합니다
+ 
+
+",""
+71,gridview error : invalid datalist()4,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+화면 진입시 gridview errer : invalid datalist() 발생하여 화면내 이벤트가 작동하지 않음. 
+첨부파일 참조 부탁드립니다. 
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+소스의 외부반출이 불가하여 재현을 할 수 없을 것 같습니다. 
+
+
+","해당 오류문구는 gridView에 바인드된 datalist가 설정되어있지 않은 경우에 단순히 남기는 로그입니다. 
+첨부해주신 사진을 기준으로 상단에 스크립트 오류가 발생한 것으로 보입니다. 해당 스크립트 오류가 발생하여 화면내의 이후 스크립트들이 정상적으로 동작하지 않은 것입니다. 
+상기 스크립트 오류부분을 먼저 확인부탁드립니다. 
+
+","화면내 스크립트를 모두 제거 한 상태에서도 같은 로그가 출력됩니다. 그리고 gridview에는 다시 datalist릉 바인딩을 해 보았지만, 같은 로그가 출력됩니다. 
+
+추가 답변드립니다. 
+[Warning] Invalid colIndex(28) 오류는 그리드와 데이터리스트의 컬럼정보가 일치하지 않을 때 발생합니다. 
+바인드하신 dataList와 gridView의 컬럼id가 동일한지 확인요청드립니다. 
+
+"
+72,LinkedDataList Filter Condition 설정1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+####acStoreList####
+<w2:dataList baseNode=""list"" repeatNode=""map"" id=""acStoreList"" saveRemovedData=""true"">
+                    <w2:columnInfo>
+                        <w2:column id=""chk"" name=""전체선택"" dataType=""text"" ignoreStatus=""true""></w2:column>
+                        <w2:column id=""itemNm"" name=""물품명"" dataType=""text""></w2:column>
+                        <w2:column id=""spec"" name=""규격명"" dataType=""text""></w2:column>
+                        <w2:column id=""mngtResprNm"" name=""관리담당자"" dataType=""text""></w2:column>
+                        <w2:column id=""btnUserView"" name=""조회"" dataType=""text""></w2:column>
+                        <w2:column id=""itemLrgClsfCd"" name=""대분류"" dataType=""text""></w2:column>
+                        <w2:column id=""itemClsfCd"" name=""중분류"" dataType=""text""></w2:column>
+                        <w2:column id=""setupBldCd"" name=""설치건물"" dataType=""text""></w2:column>
+                        <w2:column id=""setupFloorCd"" name=""설치층"" dataType=""text""></w2:column>
+                        <w2:column id=""setupRoomCd"" name=""설치호실"" dataType=""text""></w2:column>
+                        <w2:column id=""makeCountryCd"" name=""제작국가"" dataType=""text""></w2:column>
+                        <w2:column id=""makeCoNm"" name=""제작회사"" dataType=""text""></w2:column>
+                        <w2:column id=""infoAsstYn"" name=""정보자산"" dataType=""text""></w2:column>
+                        <w2:column id=""productSeqNo"" name=""Serial"" dataType=""text""></w2:column>
+                        <w2:column id=""mngtRespr"" name=""관리담당자"" dataType=""text""></w2:column>
+                    </w2:columnInfo>
+                </w2:dataList>
+####dgRoom####
+<w2:dataList baseNode=""list"" repeatNode=""map"" id=""dgRoom"" saveRemovedData=""true"">
+                    <w2:columnInfo>
+                        <w2:column id=""upCd"" name=""상위코드"" dataType=""text""></w2:column>
+                        <w2:column id=""cd"" name=""대표관리코드"" dataType=""text""></w2:column>
+                        <w2:column id=""cdNm"" name=""호실"" dataType=""text""></w2:column>
+                    </w2:columnInfo>
+                </w2:dataList>
+####LinkdedDataList####
+<w2:linkedDataList bind=""dgRoom"" id=""linkDgRoom"">  
+      <w2:condition type=""filter""><![CDATA[upCd == (ref('data:acMstList.setupBldCd') + ref('data:acMstList.setupBldCd'))]]></w2:condition>  
+      <w2:condition type=""sort""><![CDATA[]]></w2:condition>  
+</w2:linkedDataList>  
+첨부사진처럼 건물>층>호실로 linkedDataList를 이용해서 grid 속 select타입의 컬럼을 설정해주고 싶은데
+빨간색 부분이 작동하지 않는걸 보니 올바른 사용법이 아닌거같습니다.
+함수를 이용해서 저 filter condition의 true, false를 주고싶은데 어떻게 하면 되나요?
+LinkedDataList의 setColumeFilter 를 이용하는건가요?? 해봣었는데 잘 구현못한건지...
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+","하기의 linkeddatalist 활용예와 같이 ref('data:acMstList.setupBldCd') + ref('data:acMstList.setupBldCd')) 와 같이 결합 형태는 지원되지 않습니다.
+결함용 임의의 컬럼을 추가하신후 해당 컬럼에 결합 키 값이 들어가도록 구성하고 해당 컬럼에 대하여 조건식을 걸어 주시는것도 검토 부탁드립니다.
+
+https://inswave.com/confluence/pages/viewpage.action?pageId=9669615",""
+73,selectbox에서 ref(datalist.colID)를 이용한 필터 적용 오류2,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+selectbox에 linkedDataList 를 바인딩 한 후
+
+dtlCommonCode_ODTY_CODE.setCondition(""filter"", dtlCommonCode_ODTY_CODE.getOption( ""filterCondition"" ) + "" && (USEX_YSNO == '1' || COMD_CODE == ref('data:dtlSA_OPPRXM.ODTY_CODE'))"");
+
+과 같이 필터를 하게 되면..
+
+그리드뷰 내의 selectbox (inputType=select) 는 정상 작동하나,
+selectbox 컴포넌트를 추가하여 바인딩하게 되면 필터된 값이 사라지는 문제가 발생합니다.
+
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","selectedData=""false"" 사용중이신지 검토 부탁드립니다.
+해당 웹스퀘어 xml 소스 첨부하여 주시면 검토에 많은 도움이 될것 같습니다. 
+
+","감사합니다...^^
+
+"
+74,linkedDataList 출력 에러 4,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+cell별로 readOnly 를 적용해야하는데 문제는 그 cell의 inputType이 select이고, nodeset은 linkedDataList입니다
+해당 그리드의 cell값은 조회 시(dataload) linkedDataList를 이용해 제대로 값을 가져옵니다(label값을 잘 나타냄)
+하지만 setCellReadOnly를 적용해버리면(true,false무관) 해당 select의 출력형태가 label에서 Value값으로 바뀌어버립니다.
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+1. 
+dataList 2개 존재
+dataListA와 dataListB로 칭하겠습니다
+dataListA 에 연결된 grid의 columnA가 select형식으로 위치
+dataListB와 bind된 LinkedDataList가 grid의 ColumnB에 select형식으로 위치
+LinkedDataList는 columnA의 value값에따라 필터링됨
+
+2.
+정상적으로 dataListA, dataListB를 호출하여 select에 정상적으로 들어감(nodeset으로)
+
+3.
+grid에 bind된 mainDataList가 호출됨에 따라 columnA와 columnB의 값이 정상적으로 Label형태로 출력됨
+
+4.
+조건에 따라 columnB에 속한 cell이 grid.setCellReadOnly(boolean) 로 인해 변경됨
+
+5.
+정상적으로 Label형태로 출력되던 columnB가 Value형태로 출력되어버림
+
+6. 스크롤을하거나 해당셀을 클릭하여 selectBox가 dropDown 되면 다시 정상적으로 value값을 출력해버림
+
+
+
+
+","해당버전에서 customFormatter와  setCellReaonly(분홍색 적용)를 적용 예입니다.
+테스트 파일 첨부하여 드리오니 확인 부탁드립니다,
+
+해당 현상이 발생하시는 소스가 없어서 정확한 판단이 불가하지만, 해당 소스에서 '조건에 따라 columnB에 속한 cell이 grid.setCellReadOnly(boolean) 로 인해 변경됨' 관련하여 customFormatter를 활용하신 경우 return 을 data로 하신건 아닌지 확인이 필요해보입니다.
+
+","customFormatter는 사용하지않았습니다. 해당부분의 소스를 첨부하겠습니다. 다시한번 회신주시면 감사하겠습니다.
+
+  
+        /*
+        colInfo 부분이 dataLoad 한후에 return값(boolean)에 따라 setCellReadOnly 해주는 부분입니다. 
+        해당소스 참고하실때 dataList 선언부랑 그리드에서 관, 항, 목 column들 속성쪽을 참고하시면 될거같습니다. 
+        혹시 더필요하시면 전화주세요
+        */
+
+조건에 따라 columnB에 속한 cell이 grid.setCellReadOnly(boolean) 로 인해 변경됨 --> 해당부분에 대한 구현은 하기의 자체 구현 udc에서 작동되는 걸로 보입니다. 위 댓글에서 첨부드린 샘플에서와 같이 setCellReadOnly 를 주어도 원 그리드뷰에서는 해당 현상이 발생하지않고 있습니다.
+<w2:udc_gridTop id=""gridMstListTop"" gridId=""gridMstList"" gridType=""ALL"" title=""계정과목목록""></w2:udc_gridTop>  
+
+해당 udc에서의 작동 방식에 대하여 검토를 위해서 해당 udc 파일 첨부해주시면, 해당 기술지원담당자에게 전달드려 검토 진행드리도록 하겠습니다.
+첨부 샘플과 같이 원 그리드에 customformatter 를 활용하시는것도 검토부탁드립니다.
+ 
+
+customformatter 조언감사드립니다. 허나 똑같이 수정은 안되었고, 원인은 다른데에 있었습니다....
+여러번의 삽질한 끝에 수정완료하였고 원인은
+udc 에서 grid.setReadOnly(""cell"", rowIdx, colId, boolean);
+으로 readOnly를 설정하였는데 (setCellReadOnly도 동일함)
+rowIdx자리에 ""0"" 와같이 숫자가아닌 String 형식으로 들어갔었을때 저런 문제가 발생하더군요
+api 설명을 보니 setReadOnly의 두번째 인자가 Number만 가능하니 안되는게 맞는것 같으나
+해당 문서를 비롯한 다른문서들의 linkedDataList컬럼이 readOnly가 적용이됩니다...
+작동이 되더라도 warning 메세지를 뿌린다던지 해준다면 더 좋지 않았을까 생각해봅니다!
+
+빠르고 정성담긴 답변 감사드립니다.
+
+"
+75,GridView에 동적으로 DataList설정1,"<< 개요 >>
+현재 하나의 GridView에 상황에 따라 0개 이상의 데이터셋을 표시하고 싶은데 관련 API가 없는것 같아 문의드립니다.
+
+<< 재현 방법 >>
+하나의 GridView를 두고
+동일한 column을 가진 dataSet(A, B, C ...)을 생성 후
+
+1번상황일 경우 A의 내용을 표시,
+2번상황일 경우 B의 내용을 표시합니다.
+
+해당 dataSet은 동적으로 만들어지며 갯수는 0개 이상입니다.
+
+","
+바인딩 dataList를 변경하는 설정은 현재 제공되지 않습니다.
+대체방법으로 케이스 별로 특정한 dataList로 설정된 gridView를 생성하실수 있습니다.
+
+하기 자료 참고 부탁드립니다.
+https://inswave.com/confluence/pages/viewpage.action?pageId=6031983",""
+76,WebSquare.util.multipleDataListDownload 문의3,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+WebSquare.util.multipleDataListDownload( options );에 대해 전화문의로 하여 메일로 관련 사항을 받았는데 동작을 못하네요
+구동 가능한 xml 예제를 부탁드립니다.
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","샘플 첨부 드립니다.
+
+","콜솔창에 로그가 하단내용으로 나오고 반응이 없습니다.
+그리고 dataListDownloadURL는 어쩌 넣어야 되는지도 가이드 부탁드립니다.
+
+<vector result='2'><data vectorkey='0'><hashtable><data hashkey='style'><w2:dataList xmlns:w2=""http://www.inswave.com/websquare"" id=""dataList1"" baseNode=""list"" saveRemovedData=""true"" repeatNode=""map"">
+              <w2:columnInfo>
+               <w2:column id=""mf_dataList1_d1_col1"" name=""필드1"" dataType=""text"" col_id=""d1_col1""/>
+               <w2:column id=""mf_dataList1_d1_col2"" name=""필드2"" dataType=""text"" col_id=""d1_col2""/>
+               <w2:column id=""mf_dataList1_d1_col3"" name=""name3"" dataType=""text"" col_id=""d1_col3""/>
+               <w2:column id=""mf_dataList1_d1_col4"" name=""name4"" dataType=""text"" col_id=""d1_col4""/>
+               <w2:column id=""mf_dataList1_do1_col5"" name=""name5"" dataType=""text"" col_id=""do1_col5""/>
+              </w2:columnInfo>
+             </w2:dataList></data><data hashkey='data'><array><![CDATA[[""dataList1_00"",""dataList1_01"",""dataList1_02"",""dataList1_03"",""dataList1_04"",""dataList1_10"",""dataList1_11"",""dataList1_12"",""dataList1_13"",""dataList1_14"",""dataList1_20"",""dataList1_21"",""dataList1_22"",""dataList1_23"",""dataList1_24"",""dataList1_30"",""dataList1_31"",""dataList1_32"",""dataList1_33"",""dataList1_34"",""dataList1_40"",""dataList1_41"",""dataList1_42"",""dataList1_43"",""dataList1_44"",""dataList1_50"",""dataList1_51"",""dataList1_52"",""dataList1_53"",""dataList1_54"",""dataList1_60"",""dataList1_61"",""dataList1_62"",""dataList1_63"",""dataList1_64"",""dataList1_70"",""dataList1_71"",""dataList1_72"",""dataList1_73"",""dataList1_74"",""dataList1_80"",""dataList1_81"",""dataList1_82"",""dataList1_83"",""dataList1_84"",""dataList1_90"",""dataList1_91"",""dataList1_92"",""dataList1_93"",""dataList1_94""]]]></array></data><data hashkey='rowNumVisible' value='false'/><data hashkey='fileName' value='dataList.xlsx'/><data hashkey='sheetName' value='첫번째 sheet'/><data hashkey='multipleSheet' value='true'/><data hashkey='stRowIndex' value='0'/><data hashkey='stColIndex' value='0'/><data hashkey='removeColumns' value=''/><data hashkey='headerColor' value=''/><data hashkey='headerFontName' value=''/><data hashkey='headerFontSize' value=''/><data hashkey='headerFontColor' value=''/><data hashkey='bodyColor' value=''/><data hashkey='bodyFontName' value=''/><data hashkey='bodyFontSize' value=''/><data hashkey='bodyFontColor' value=''/><data hashkey='dataProvider' value=''/><data hashkey='splitProvider' value=''/><data hashkey='providerRequestXml' value=''></data><data hashkey='userDataXml' value=''></data><data hashkey='optionParam' value=''/><data hashkey='useEuroLocale' value='false'/><data hashkey='useHeader' value='true'/><data hashkey='fitToPage' value='false'/><data hashkey='landScape' value='false'/><data hashkey='fitWidth' value='1'/><data hashkey='fitHeight' value='1'/><data hashkey='scale' value='100'/><data hashkey='pageSize' value='A4'/><data hashkey='separator' value=','/><data hashkey='freezePane' value=''/><data hashkey='autoSizeColumn' value='false'/><data hashkey='displayGridlines' value=''/><data hashkey='useDataFormat' value='false'/><data hashkey='rowNumHeaderValue' value=''/><data hashkey='startRowNumber' value='0'/><data hashkey='bodyNumberDefaultValue' value=''/><data hashkey='numberToText' value='false'/><data hashkey='rowHeight' value='-1'/><data hashkey='headerRowHeight' value='-1'/><data hashkey='pwd' value=''/><data hashkey='headerAutoFilter' value='false'/><data hashkey='openFile' value='false'/><data hashkey='macroFileName' value=''/><data hashkey='useMacro' value='false'/><data hashkey='information'><vector result='0'></vector></data></hashtable></data><data vectorkey='1'><hashtable><data hashkey='style'><w2:dataList xmlns:w2=""http://www.inswave.com/websquare"" id=""dataList2"" baseNode=""list"" saveRemovedData=""true"" repeatNode=""map"">
+              <w2:columnInfo>
+               <w2:column id=""mf_dataList2_d2_col1"" name=""name1"" dataType=""text"" col_id=""d2_col1""/>
+               <w2:column id=""mf_dataList2_d2_col2"" name=""name2"" dataType=""text"" col_id=""d2_col2""/>
+               <w2:column id=""mf_dataList2_d3_col3"" name=""name3"" dataType=""text"" col_id=""d3_col3""/>
+              </w2:columnInfo>
+             </w2:dataList></data><data hashkey='data'><array><![CDATA[[""dataList2_00"",""dataList2_01"",""dataList2_02"",""dataList2_10"",""dataList2_11"",""dataList2_12"",""dataList2_20"",""dataList2_21"",""dataList2_22"",""dataList2_30"",""dataList2_31"",""dataList2_32"",""dataList2_40"",""dataList2_41"",""dataList2_42"",""dataList2_50"",""dataList2_51"",""dataList2_52"",""dataList2_60"",""dataList2_61"",""dataList2_62"",""dataList2_70"",""dataList2_71"",""dataList2_72"",""dataList2_80"",""dataList2_81"",""dataList2_82"",""dataList2_90"",""dataList2_91"",""dataList2_92""]]]></array></data><data hashkey='rowNumVisible' value='false'/><data hashkey='fileName' value='dataList.xlsx'/><data hashkey='sheetName' value='두번째 sheet'/><data hashkey='multipleSheet' value='true'/><data hashkey='stRowIndex' value='0'/><data hashkey='stColIndex' value='0'/><data hashkey='removeColumns' value=''/><data hashkey='headerColor' value=''/><data hashkey='headerFontName' value=''/><data hashkey='headerFontSize' value=''/><data hashkey='headerFontColor' value=''/><data hashkey='bodyColor' value=''/><data hashkey='bodyFontName' value=''/><data hashkey='bodyFontSize' value=''/><data hashkey='bodyFontColor' value=''/><data hashkey='dataProvider' value=''/><data hashkey='splitProvider' value=''/><data hashkey='providerRequestXml' value=''></data><data hashkey='userDataXml' value=''></data><data hashkey='optionParam' value=''/><data hashkey='useEuroLocale' value='false'/><data hashkey='useHeader' value='true'/><data hashkey='fitToPage' value='false'/><data hashkey='landScape' value='false'/><data hashkey='fitWidth' value='1'/><data hashkey='fitHeight' value='1'/><data hashkey='scale' value='100'/><data hashkey='pageSize' value='A4'/><data hashkey='separator' value=','/><data hashkey='freezePane' value=''/><data hashkey='autoSizeColumn' value='false'/><data hashkey='displayGridlines' value=''/><data hashkey='useDataFormat' value='false'/><data hashkey='rowNumHeaderValue' value=''/><data hashkey='startRowNumber' value='0'/><data hashkey='bodyNumberDefaultValue' value=''/><data hashkey='numberToText' value='false'/><data hashkey='rowHeight' value='-1'/><data hashkey='headerRowHeight' value='-1'/><data hashkey='pwd' value=''/><data hashkey='headerAutoFilter' value='false'/><data hashkey='openFile' value='false'/><data hashkey='macroFileName' value=''/><data hashkey='useMacro' value='false'/><data hashkey='information'><vector result='0'></vector></data></hashtable></data></vector>
+
+"
+77,datalist.getModifiedJSON( options ) 문의드립니다.1,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+datalist.getModifiedJSON을 사용할 시 변경된 항목을 가져온다고는 알고있는데 변경된 행에서 공백이나 null값을 제외하고 가져오는 옵션이 있는지 확인하고싶습니다.
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","해당 옵션은 제공되지 않습니다.
+
+",""
+78,"API 문서에 누락되어있는 함수(DataList.getColSum, DataList.getColAvg등)에 대해 문의 드립니다.","<< 개요 >>
+DataList의 함수들 중에 WebSquare API문서에 누락되어 있는 함수가 몇가지 있습니다.
+테스트를 해보니 정상 동작 하는걸로 보이고 이미 사용중인 개발자분도 계신데,
+API문서에는 왜 누락되어 있는지, 사용해도 되는지 문의 드립니다.
+
+
+<< 재현 방법 >>
+
+DataList.getColAvg()
+DataList.getColCnt()
+DataList.getColMax()
+DataList.getColMin()
+DataList.getColSum()
+
+
+
+","해당 API는 웹스퀘어 엔진 내부에서 사용하는 API로,
+공개되지 않은 API 사용은 권장드리지 않습니다.
+
+",""
+79,"input ref 로 datalist 연결했을때, datalist ColumnFilter 이벤트 문의1","<< 개요 >>
+
+1.  input 의 ref 속성에 ""data:dtlTM_USERXM.USER_IDXX""  데이타리스트 연결한 상태에서
+
+해당 데이타리스트의 로우가 0일 때 input 의 입력을 불가능하게 리드온리, 디스어블 처리 할 수 있는지 문의.
+
+2. 데이타리스트 이벤트 중에 
+onbeforecolumnfilterchange
+onaftercolumnfilterchange
+
+2개가 있는데,
+
+데이타리스트.setColumnFilter()를 호출해도 이벤트 반응이 없는데, 해당 이벤트가 언제 호출되는 건지 문의드립니다.
+
+<< 재현 방법 >>
+
+컬럼필터 체인지 이벤트 호출 테스트 한 코드 입니다.
+데이터 1줄 있는 상태에서 필터로 1줄 0줄 토글로 반복하는 형태입니다.
+
+                <w2:dataList id=""dtlTM_USERXM"" baseNode="""" style="""" saveRemovedData=""true"" repeatNode="""" valueAttribute=""""
+                    ev:onaftercolumnfilterchange=""scwin.dtlTM_USERXM_onaftercolumnfilterchange"" 
+                    ev:onbeforecolumnfilterchange=""scwin.dtlTM_USERXM_onbeforecolumnfilterchange"">
+                    <w2:columnInfo>
+                        <w2:column id=""USDN_CODE"" name=""사용자구분코드"" dataType=""text""></w2:column>
+                        <w2:column id=""USER_IDXX"" name=""사용자ID"" dataType=""text""></w2:column>
+                    </w2:columnInfo>
+                    <w2:data>
+                        <w2:row>
+                            <USER_IDXX><![CDATA[asm]]></USER_IDXX>
+                        </w2:row>
+                    </w2:data>
+                </w2:dataList>
+
+    scwin.dtlTM_USERXM_onbeforecolumnfilterchange = function() {
+        console.log(""beforecolumnfilterchange:"" + dtlTM_USERXM.getRowCount());
+    };
+        
+    scwin.dtlTM_USERXM_onaftercolumnfilterchange = function() {
+        console.log(""aftercolumnfilterchange:"" + dtlTM_USERXM.getRowCount());
+    };
+
+
+    var bIs =true;
+    
+    scwin.optInformation_onclick = function(e) {
+    
+        dtlTM_USERXM.clearFilter();
+        dtlTM_USERXM.removeColumnFilterAll();
+        
+        if(bIs=!bIs) {
+            dtlTM_USERXM.setColumnFilter( ""USDN_CODE"", ""xxx"", ""and"" );
+        } else {
+            dtlTM_USERXM.setColumnFilter( ""USER_IDXX"", ""asm"", ""and"" );
+        }
+    };
+
+","1.  input 의 ref 속성에 ""data:dtlTM_USERXM.USER_IDXX""  데이타리스트 연결한 상태에서
+해당 데이타리스트의 로우가 0일 때 input 의 입력을 불가능하게 리드온리, 디스어블 처리 할 수 있는지 문의.
+-->해당경우에 setReadOnly/setDisabled 로 처리 가능합니다.
+
+2.onbeforecolumnfilterchange
+onaftercolumnfilterchange
+
+해당 이벤트는 api에 의해 변경될때 발생되지 않고, 사용자에 동작에 의해서 필터가 변경될때 발생되는 이벤트 입니다.
+해당 내용은 api 에 보강될 예정입니다.
+
+예시)하기와 같이 그리드뷰에 useFilterList=""true"", 컬럼에 useFilter=""true"" 을 준상태에서 사용자가 필터를 변경할때 
+<w2:gridView dataList=""dataList1"" fixedColumnWithHidden=""true"" id=""gridView2"" ignoreCellClick=""false"" ignoreToggleOnDisabled=""false""
+    scrollByColumn=""false"" scrollByColumnAdaptive=""false"" style=""position: relative;width: 500px;height: 150px;"" summaryAuto=""false""
+    useShiftKey=""true"" useFilterList=""true"">
+    <w2:header id=""header1"" style="""">
+    <w2:row id=""row1"" style="""">
+    <w2:column blockSelect=""false"" displayMode=""label"" id=""column9"" inputType=""text"" style=""height:20px"" useFilter=""true""
+    value=""name1"" width=""91"">
+    </w2:column>
+
+",""
+80,한개의 gridView에 여러개의 DataList를 적용 할 수 있나요?2,"<< 개요 >>
+
+한개의 GridView에서 pageList 를 적용 하니 footer에서 전체 데이터 건수를 보고 싶은데 pageList에 보인 수만큼 카운트를 합니다.
+pageList에 적용된 부분은 나두고 다른 dataList를 불러오거나 다른 방법이 없을까요?
+
+
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","gridView의 setFooterValue를 이용해서, 원하시는 값을 설정하실수 있습니다.
+  setFooterValue( footerId , data )
+footer의 inputType이 text인 경우만 적용되며 data의 값을 footer에 설정한다.
+name type required description
+footerId String||Number Y footer의 id 또는 index
+data String Y footer에 넣을 값
+
+","감사합니다. 해결되었습니다.
+
+"
+81,"LinkedDataList 를 SelectBox에 NodeSet에 넣어 사용할때, &&와||가 동시에 컨디션에 넣을시. 오류","<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+LinkedDataList 기능을 사용하여 SelectBox 의 NodeSet 을 바인딩 후 사용중입니다.
+
+LinkedDataList 컨디션의 필터는 
+((조건a)&&((조건b)||(조건c))) 로 걸었습니다.
+
+selectBox 의 ref는 DataMap을 걸었습니다.
+
+조건 a, b , c. 전부 데이터 컬랙션에는 문제없이 들어갔으나
+조건 a, b까진 동작에 문제가 없습니다 그러나
+조건c로인해 추가된 item을 화면에서 선택 시 강제로 제일 처음으로 돌아가는 버그가 있습니다.
+
+체인지 이벤트 등은 전혀 걸린게 없으며 확인을 위해 위 SelectBox의 onviewChange 이벤트로 info를 console에 넣어 확인해보니, newSelectedIndex 가 0 으로 나옵니다. (3을클릭했으나 0으로 강제로 이동되며 index 0이됨)
+
+
+<< 재현 방법 >>
+
+개요 참고
+
+
+","해당 버전에서 테스트 한 결과 linkeddatalist 필터 조건이 영향을 미치는것 같지는 않습니다.
+전달해주신 개요만으로는 해당 현상이 발생하지 않습니다.
+
+추가로 selectBox 의 ref를 제거후 동일 현상이신지 확인 부탁드립니다.
+
+",""
+82,dataList 를 서버로 전송할때 변경된 데이터만 전송하는 방법이 있나요?4,"<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. )
+
+요즘 질문이 잦아서 죄송합니다.
+버전을 5점대로 올리고나서 새로운 공통모듈을 작성중이라서 효율적인 코드작성을 하려고 하니 양해부탁드립니다. 
+
+dataList를 서버로 전송하여 저장하려고 하는데요.
+변경되지않은 데이터까지 모두 전송하는것이 비효율적인지라, 추가/수정/삭제, 즉 변경된 데이터(row)들만 전송하고 싶습니다.
+저장시 변경된 데이터들만 따로 추려내서 추려된 데이터셋을 전송하는방법외에 다른방법이 있다면 알려주세요.
+
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","","위주소로 접속시 로그인페이지가 뜹니다. 다시 한번 확인부탁드립니다.
+
+이제 정상적으로 보이네요. 감사합니다. 제가 원하던 내용이었습니다.
+
+"
+83,"dataList 의 getDeletedXML(), getRowXML() 이 메서드가 제대로 작동이 안됩니다.","<< 개요 >>
+
+( 기능 문의의 경우 해당 기능의 사용 용도와 목적을 구체적으로 기술해 주시기 바랍니다. 
+
+db에서 데이터를 조회해다가 dataList에 setXML()로 데이터를 채운상태에서 
+
+dataList 의 데이터를 가져오는 메서드 2개가 제대로 작동이 안됩니다.
+  그런데 테스트페이지를 만들어서 (페이지에 데이터도 모두 하드코딩) 해봣는데 정상적으로 작동합니다.
+
+DB에서 데이터 조회해서 사용할때만 이러네요.
+  이상한점은 getRowData() 와 getRangeXML() 는 정상적으로 데이터를 가져옵니다.
+  아래는 관련 코드입니다.
+  --------------------------------------------------------------------------------------------
+.
+.
+.
+var xmlData = e.responseBody;
+  //데이터 바인딩
+dataList009.setXML( xmlData );
+  for (var i=0; i<dataList009.getTotalRow(); i++) {
+    console.log(""-------------------"" + i + ""---------------------"");
+    var rowData = dataList009.getRowData(i);
+    console.log(""rowData : "" + rowData);  //정상데이터가 찍힘
+      var xmlData = dataList009.getRangeXML(i, i);
+    console.log(""xmlData : "" + WebSquare.xml.serialize(xmlData));  //정상데이터가 찍힘
+      var xmlData = dataList009.getRowXML(i);
+    console.log(""xmlData : "" + WebSquare.xml.serialize(xmlData));  //아무것도 안찍힘
+}
+----------------------------------------------------------------------------------------------
+
+
+
+위 코드 실행시 아래와 같이 출력됩니다.
+
+-------------------0---------------------
+rowData : N,ADI11001000152018003,1,001,001,,I1100100015001000002, ~~~~~ 이하 생략
+xmlData : <map id=""dataList009""><vector id=""dataList009""><map index=""0""><chk value=""N""/><docSeq value=""ADI11001000152018003""/> ~~~~~ 이하 생략
+xmlData : 
+ -------------------1---------------------
+rowData : N,ADI11001000152018003,2,003,001,,I1100100015001000003, ~~~~~ 이하 생략
+xmlData : <map id=""dataList009""><vector id=""dataList009""><map index=""1""><chk value=""N""/><docSeq value=""ADI11001000152018003""/> ~~~~~ 이하 생략
+xmlData : 
+-------------------2---------------------
+rowData : N,ADI11001000152018003,3,002,002,,I1100100015003000011, ~~~~~ 이하 생략
+xmlData : <map id=""dataList009""><vector id=""dataList009""><map index=""2""><chk value=""N""/><docSeq value=""ADI11001000152018003""/> ~~~~~ 이하 생략
+xmlData : 
+-------------------3---------------------
+rowData : N,ADI11001000152018003,4,002,002,,I1100100015003000012, ~~~~~ 이하 생략
+xmlData : <map id=""dataList009""><vector id=""dataList009""><map index=""3""><chk value=""N""/><docSeq value=""ADI11001000152018003""/> ~~~~~ 이하 생략
+xmlData : 
+
+
+무엇이 문제일까요?
+ 
+
+<< 재현 방법 >>
+
+( 재현이 쉽도록 순서를 명시하여 주시면 좋습니다. 관련 소스는 가급적 첨부파일로 올려 주시기 바랍니다.)
+
+
+
+","해당현상 발생시 Ctrl+마우스 우클릭 후 디버그 메뉴에서 ""로그보기"" 기재 부탁드립니다.
+
+17:49:16.684 00000 000000 BootLoader] WebSquare Runtime Engine Version : 5.0_1.2278B.20160923.181306_1.6
+17:49:16.684 00000 000000 BootLoader]     Copyright 2009  INSWAVE Systems Co., Ltd. All Rights Reserved.
+17:49:16.684 00000 000000 BootLoader] [STEP1][START] Loading Runtime Engine.
+17:49:16.684 00000 000000 BootLoader] engineLoadingMode : 1 - Download & Evaluation WebSquare Engine.[download 64k chunk & eval at once]
+17:49:16.783 00099 000099 BootLoader] WebSquare.BootLoader.imports [ext][externalJS/papaparse.js]
+17:49:16.786 00003 000102 BootLoader] WebSquare.BootLoader.imports [ext][message/ko.js]
+17:49:16.810 00024 000126 BootLoader] [STEP2][ENGINE] Runtime Engine Load complete. Time:136ms
+17:49:16.813 00003 000129 BootLoader] WebSquare.BootLoader.imports [object][uiplugin.popup]
+17:49:16.865 00052 000181 BootLoader] [STEP3][RESOURCE] Resource(XML, Skin, CSS, JS) Load Complete. Time:55ms
+17:49:16.902 00037 000218 BootLoader] [STEP4][CREATE] WebSquare Object Creation Complete. Time:37ms
+17:49:16.903 00001 000219 popup] [WebSquare.util.js]script loading[script_ordered_async]
+17:49:16.999 00096 000315 BootLoader] controlCollection.toHTML - before
+17:49:17.017 00018 000333 BootLoader] controlCollection.toHTML - after
+17:49:17.019 00002 000335 BootLoader] [STEP5][RENDER] HTML Rendering Complete. Time:117ms
+17:49:17.037 00018 000353 BootLoader] [STEP6][ADJUST] Pre Event Activation. Time:18ms
+17:49:17.037 00000 000353 BootLoader] Asynchronous call process
+17:49:17.075 00038 000391 BootLoader] [STEP7][EVENT] Event Activation. Time:38ms
+17:49:17.077 00002 000393 popup] WebSquare.ModelUtil.executeSubmission : getSessionData
+17:49:17.078 00001 000394 popup] WebSquare.layer.showProcessMessage [잠시만기다려주세요..]
+17:49:17.082 00004 000398 popup] /cm/cma/getSessionData.do
+17:49:17.197 00115 000513 popup] submission complete. Status[200] getSessionData
+17:49:17.198 00001 000514 popup] submission id[getSessionData] start[17:49:17:77] end[17:49:17:197] duration[120ms]
+17:49:17.198 00000 000514 popup] WebSquare.ModelUtil.executeSubmission : getCommonCdDetailList
+17:49:17.199 00001 000515 popup] /cm/cma/getCommonCdDetailList.do
+17:49:17.283 00084 000599 popup] submission complete. Status[200] getCommonCdDetailList
+17:49:17.283 00000 000599 popup] submission id[getCommonCdDetailList] start[17:49:17:198] end[17:49:17:283] duration[85ms]
+17:49:17.283 00000 000599 popup] WebSquare.ModelUtil.executeSubmission : getCommonCdDetailList
+17:49:17.284 00001 000600 popup] /cm/cma/getCommonCdDetailList.do
+17:49:17.371 00087 000687 popup] submission complete. Status[200] getCommonCdDetailList
+17:49:17.371 00000 000687 popup] submission id[getCommonCdDetailList] start[17:49:17:283] end[17:49:17:371] duration[88ms]
+17:49:17.372 00001 000688 popup] WebSquare.ModelUtil.executeSubmission : getCommonCdDetailList
+17:49:17.372 00000 000688 popup] /cm/cma/getCommonCdDetailList.do
+17:49:17.475 00103 000791 popup] submission complete. Status[200] getCommonCdDetailList
+17:49:17.475 00000 000791 popup] submission id[getCommonCdDetailList] start[17:49:17:372] end[17:49:17:475] duration[103ms]
+17:49:17.476 00001 000792 popup] WebSquare.ModelUtil.executeSubmission : syncSubmission
+17:49:17.477 00001 000793 popup] /qt/rct/select.do
+17:49:17.555 00078 000871 popup] submission complete. Status[200] syncSubmission
+17:49:17.555 00000 000871 popup] submission id[syncSubmission] start[17:49:17:476] end[17:49:17:555] duration[79ms]
+17:49:17.560 00005 000876 popup] WebSquare.ModelUtil.executeSubmission : syncSubmission
+17:49:17.560 00000 000876 popup] /qt/rct/selectMultiList.do
+17:49:17.674 00114 000990 popup] submission complete. Status[200] syncSubmission
+17:49:17.674 00000 000990 popup] submission id[syncSubmission] start[17:49:17:560] end[17:49:17:674] duration[114ms]
+17:49:17.680 00006 000996 popup] ERROR : WebSquare.xml.load Error입니다. String이 공백입니다.
+17:49:17.683 00003 000999 popup] ERROR : WebSquare.xml.load Error입니다. String이 공백입니다.
+17:49:17.685 00002 001001 popup] ERROR : WebSquare.xml.load Error입니다. String이 공백입니다.
+17:49:17.688 00003 001004 popup] ERROR : WebSquare.xml.load Error입니다. String이 공백입니다.
+17:49:17.690 00002 001006 popup] ERROR : WebSquare.xml.load Error입니다. String이 공백입니다.
+17:49:17.692 00002 001008 popup] ERROR : WebSquare.xml.load Error입니다. String이 공백입니다.
+17:49:17.694 00002 001010 popup] ERROR : WebSquare.xml.load Error입니다. String이 공백입니다.
+17:49:17.696 00002 001012 popup] ERROR : WebSquare.xml.load Error입니다. String이 공백입니다.
+17:49:17.697 00001 001013 popup] WebSquare.ModelUtil.executeSubmission : syncSubmission
+17:49:17.697 00000 001013 popup] /qt/rct/selectList.do
+17:49:17.746 00049 001062 popup] submission complete. Status[200] syncSubmission
+17:49:17.746 00000 001062 popup] submission id[syncSubmission] start[17:49:17:697] end[17:49:17:746] duration[49ms]
+17:49:17.757 00011 001073 popup] Wframe unloading start.
+17:49:17.758 00001 001074 popup] Wframe unloading finished.
+17:49:17.802 00044 001118 popup] Wframe unloading start.
+17:49:17.802 00000 001118 popup] Wframe unloading finished.
+17:49:17.844 00042 001160 popup] Wframe unloading start.
+17:49:17.844 00000 001160 popup] Wframe unloading finished.
+17:49:17.861 00017 001177 popup] Wframe unloading start.
+17:49:17.861 00000 001177 popup] Wframe unloading finished.
+17:49:17.884 00023 001200 popup] Wframe unloading start.
+17:49:17.884 00000 001200 popup] Wframe unloading finished.
+17:49:17.909 00025 001225 popup] Wframe unloading start.
+17:49:17.909 00000 001225 popup] Wframe unloading finished.
+17:49:17.929 00020 001245 popup] Wframe unloading start.
+17:49:17.929 00000 001245 popup] Wframe unloading finished.
+17:49:17.950 00021 001266 popup] Wframe unloading start.
+17:49:17.950 00000 001266 popup] Wframe unloading finished.
+17:49:17.971 00021 001287 BootLoader] [STEP8][EXECUTE] JS load and Global Script Execution Completed. Time:896ms
+17:49:17.971 00000 001287 BootLoader] [STEP SUMMARY] Initial procedures completed. Duration : 1297, 시간 요약 : 136 55 37 117 18 38 896 1297
+ 
+
+/qt/rct/selectMultiList.do 요청에 대한 응답전문입니다.
+getRowXML()을 사용하는 리스트는 'QTDC009' 입니다.
+
+테스트코드 샘플입니다.
+
+<w2:dataList id=""dataList1"" baseNode=""map/vector[@id='boardList']"" 이부분을 
+<w2:dataList id=""dataList1"" baseNode=""map/vector"" 이렇게 고치고 새로고침해보면 getRowXML() 이 정상작동합니다.
+
+","baseNode에서 id attribute 부분을 제거하시고 해당 dataList id를 boardList 로 수정하여 일치 시켜주시길 권장드립니다.
+test.xml 을 수정한 test1.xml 파일과 첨부해주신 응답전문을 기준으로 권장하는 수정안을  test2.xml 파일을 첨부드립니다.
+
+"
