@@ -118,7 +118,7 @@
 		  <li class="d-flex justify-content-between mb-4">
             <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
               class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
-            <div class="card mask-custom">
+            <div class="card mask-custom  w-100">
               <div class="card-header d-flex justify-content-between p-3"
                 style="border-bottom: 1px solid rgba(255,255,255,.3);">
                 <p class="fw-bold mb-0">wtechGPT</p>
@@ -244,8 +244,17 @@
       type: "POST",
       url:"/youtube",
       data : {'prompt' : question , 'isFirst':isFirst},
-      success : function(data){
+      success : function(data){debugger;
         $(".list-unstyled:first-child li:last-child").remove();
+        var haveLink = data.answer.indexOf('https://youtu.be/')
+
+         if(haveLink > -1 ){
+                var link = data.answer.lastIndexOf("/")
+                var contain =  data.answer.substr(link+1)
+
+         }
+        console.log(contain);
+
         let gpt_data = '';
         gpt_data += `
          <li class="d-flex justify-content-between mb-4">
@@ -261,8 +270,16 @@
                 <p class="mb-0">
                   ${data.answer}
 
-                </p>
-              </div>
+                </p>`
+
+                if (contain != undefined || contain !=null){
+                   gpt_data+=`<iframe height="300" width="400" src='https://www.youtube.com/embed/${contain}' ></iframe>`
+                }
+
+
+
+
+              gpt_data+=`</div>
             </div>
           </li>
         `;

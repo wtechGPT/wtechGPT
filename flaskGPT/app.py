@@ -18,10 +18,213 @@ app.register_error_handler(404, page_not_found)
 
 
 openai.organization = "org-dLiMqqSmLIXuV45cMCo7Pvcj"
-openai.api_key = os.getenv("OPENAI_API_KEY" )
+# openai.api_key = os.getenv("OPENAI_API_KEY" )
+openai.api_key = "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"
+
 openai.Model.list()
 
-'''지수언니 코드 시작 '''
+''' 은별이 코드 시작 '''
+import pandas
+import numpy
+from openai.embeddings_utils import distances_from_embeddings, cosine_similarity
+
+df_n1apiKo=pandas.read_csv('processed/embeddings_ko.csv', index_col=0)
+#
+df_n1apiKo['embeddings'] = df_n1apiKo['embeddings'].apply(eval).apply(numpy.array)
+
+
+def create_context_ko(
+        question, df, max_len=1500, debug=False
+):
+    """
+    Create a context for a question by finding the most similar context from the dataframe
+    """
+
+    # Get the embeddings for the question
+    q_embeddings = openai.Embedding.create(input=question, engine='text-embedding-ada-002')['data'][0]['embedding']
+
+    # Get the distances from the embeddings
+    df['distances'] = distances_from_embeddings(q_embeddings, df['embeddings'].values, distance_metric='cosine')
+
+    returns = []
+    cur_len = 0
+    prev_distance = 0
+    prev_msg = ""
+
+    # Sort by distance and add the text to the context until the context is too long
+    for i, row in df.sort_values('distances', ascending=True).iterrows():
+
+        if prev_distance == row['distances']:
+            #             print("이전 목록과 동일 (distance)")
+            continue
+        elif prev_msg == row['n1DataKo']:
+            #             print("이전 목록과 동일 (문자열)")
+            continue
+        else:
+            prev_distance = row['distances']
+            prev_msg = row['n1DataKo']
+
+            # Add the length of the text to the current length
+            cur_len += row['n_tokens'] + 4
+
+            # If the context is too long, break
+            if cur_len > max_len:
+                break
+
+            if debug:
+                print(i, row['distances'], row['n1DataKo'])
+            # Else add it to the text that is being returned
+            returns.append(row["n1DataKo"])
+
+    # Return the context
+    return "\n\n###\n\n".join(returns)
+
+
+def answer_question_chat_ko(
+        df,
+        model="gpt-3.5-turbo",
+        question="Am I allowed to publish model outputs to Twitter, without a human review?",
+        max_len=3000,
+        debug=False,
+        #     max_tokens=150,
+        stop_sequence=None
+):
+    """
+    Answer a question based on the most similar context from the dataframe texts
+    """
+    context = create_context_ko(
+        question,
+        df,
+        max_len=max_len,
+        debug=debug
+    )
+    # If debug, print the raw model response
+    if debug:
+        print("\n\nContext:\n" + context)
+        print("\n\n")
+
+    try:
+        # Create a completions using the question and context
+        response = openai.ChatCompletion.create(
+            model=model,
+            messages=[
+                {"role": "user",
+                 "content": f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"I don't know\"\n\nContext: {context}\n\n---\n\nQuestion: {question}\nAnswer:"}
+            ],
+            temperature=0,
+            #             max_tokens=max_tokens,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0,
+            stop=stop_sequence,
+        )
+
+        return response["choices"][0]["message"]["content"].strip()
+    except Exception as e:
+        print(e)
+        return ""
+
+
+def answer_question_completion_ko(
+        df,
+        model="text-davinci-003",
+        question="Am I allowed to publish model outputs to Twitter, without a human review?",
+        max_len=2000,
+        debug=False,
+        #     max_tokens=150,
+        stop_sequence=None
+):
+    """
+    Answer a question based on the most similar context from the dataframe texts
+    """
+    context = create_context_ko(
+        question,
+        df,
+        max_len=max_len,
+        debug=debug
+    )
+    # If debug, print the raw model response
+    if debug:
+        print("\n\nContext:\n" + context)
+        print("\n\n")
+
+    try:
+        # Create a completions using the question and context
+        response = openai.Completion.create(
+            prompt=f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"I don't know!!!\"\n\nContext: {context}\n\n---\n\nQuestion: {question}:\nAnswer:",
+            temperature=0,
+            #             max_tokens=max_tokens,
+            top_p=1,
+            frequency_penalty=0,
+            presence_penalty=0,
+            stop=stop_sequence,
+            model=model,
+        )
+        return response["choices"][0]["n1DataKo"].strip()
+    except Exception as e:
+        print(e)
+        return ""
+
+
+def search_context_ko(
+        df, question, max_cnt=5, debug=False
+):
+    """
+    Create a context for a question by finding the most similar context from the dataframe
+    """
+
+    # Get the embeddings for the question
+    q_embeddings = openai.Embedding.create(input=question, engine='text-embedding-ada-002')['data'][0]['embedding']
+
+    # Get the distances from the embeddings
+    df['distances'] = distances_from_embeddings(q_embeddings, df['embeddings'].values, distance_metric='cosine')
+
+    returns = []
+    cur_cnt = 0
+    prev_distance = 0
+    prev_msg = ""
+
+    # Sort by distance and add the text to the context until the context is too long
+    for i, row in df.sort_values('distances', ascending=True).iterrows():
+
+        if prev_distance == row['distances']:
+            print("이전 목록과 동일 (distance)")
+            continue
+        elif prev_msg == row['n1DataKo']:
+            print("이전 목록과 동일 (문자열)")
+            continue
+        else:
+            prev_distance = row['distances']
+            prev_msg = row['n1DataKo']
+
+            # Add the length of the text to the current length
+            cur_cnt += 1
+
+            # If the context is too long, break
+            if cur_cnt > max_cnt:
+                break
+
+            #             if debug:
+            print(i, row['distances'], row['n1DataKo'])
+            # Else add it to the text that is being returned
+            returns.append(row["n1DataKo"])
+
+    # Return the context
+    return "\n\n---\n\n".join(returns)
+
+
+
+
+
+
+
+
+
+'''은별이 코드 끝 '''
+
+
+
+'''지수언니 코드 시작 
 # df_cleaning_ko = pd.read_csv('processed/topic_content_embeddings_test2.csv' ,index_col=0)
 
 tokenizer = tiktoken.get_encoding("cl100k_base")
@@ -301,7 +504,7 @@ def search_context(
     return "\n\n---\n\n".join(returns)
 
 
-'''지수언니 코드 끝 '''
+지수언니 코드 끝 '''
 
 
 
@@ -630,15 +833,17 @@ def chat():
 
 
         res ={}
-        # res['answer'] = answer_question_completion(df_cleaning_ko, question=value, debug=False)
-        res['answer'] = answer_question_chat(df_cleaning_ko, question=value)
+        # res['answer'] = answer_question_completion(df_cleaning_ko, question=value, debug=False) #내코드 샘플 연동
+        # res['answer'] = answer_question_chat(df_cleaning_ko, question=value) #지수언니 코드
+        res['answer'] = answer_question_chat_ko(df_n1apiKo, question=value, debug=False) #은별이 코드
 
         if isFirst == 'False':
             print(">>>>>>answer1>>>>", res['answer'])
             return jsonify(res) , 200
         else :
-            # an1 = answer_question_completion(df_cleaning_ko, question=value, debug=False)
-            an1 = answer_question_chat(df_cleaning_ko, question=value)
+            # an1 = answer_question_completion(df_cleaning_ko, question=value, debug=False) #내코드- 샘플 연동
+            # an1 = answer_question_chat(df_cleaning_ko, question=value) #지수언니 코드
+            an1 =  answer_question_chat_ko(df_n1apiKo, question=value, debug=False)
             print(">>>>>>answer2>>>>",an1)
 
     return render_template('chat.html' , answer= an1 ,question =value)
