@@ -8,7 +8,11 @@ background: -webkit-linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgb
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 /*background: linear-gradient(to bottom right, rgba(252, 203, 144, 1), rgba(213, 126, 235, 1))*/
 /*height: 100%;*/
-background:url(../img/banner-bg.jpg) no-repeat;
+background:url(../img/banner-bg.jpg) ;
+/* background:url(../img/banner-bg.jpg) no-repeat; */
+    height: fit-content;
+    background-repeat-y: repeat;
+
 /*background-size:cover*/
 /*overflow-y: scroll;*/
 }
