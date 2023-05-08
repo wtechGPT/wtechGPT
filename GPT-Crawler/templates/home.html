@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .contents {
+                margin: 20px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <title>W-Tech Scraper</title>
+    </head>
+    <body style="background:black; background-repeat:no-repeat;">
+        <div class="wrap" style="background:rgb(255, 255, 255, 0.5);  margin-top: 250px; border-radius: 15px; height:300px;">
+            <div class="contents">
+                <h1 style="text-align: center; padding-top:60px; margin-bottom: 25px;" >W-Tech Scraper</h1>
+                <h4 style="text-align: center; color: rgb(75, 75, 75); margin-bottom: 50px;">
+                    What are you curious about? 🔍 </h4>
+                <form action="/scrape" method="get" style="text-align: center;">
+                    <select name="searchType" >
+                        <option value="titleOrContent">제목 + 내용</option>
+                        <option value="title">제목</option>
+                        <option value="content">내용</option>
+                    </select>
+                    <input placeholder="Enter the content" required name="searchText"/>
+                    <button>Search</button>
+                </form>
+            <div>
+        </div>
+    </body>
+</html>
