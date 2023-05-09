@@ -96,6 +96,7 @@
 
 
 <!--       사용자 질문 -->
+          <!--
           <li class="d-flex justify-content-between mb-4">
 		  
             <div class="card mask-custom w-100">
@@ -110,13 +111,14 @@
                 </p>
               </div>
             </div>
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp" alt="avatar"
+            <img src="{{ url_for('static', filename='img/ji.png')}}" alt="avatar"
               class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
           </li>
-          
+          -->
 		  <!-- gpt 대답 -->
+            <!--
 		  <li class="d-flex justify-content-between mb-4">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
+            <img src="{{ url_for('static', filename='img/chatbot.png')}}" alt="avatar"
               class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
             <div class="card mask-custom  w-100">
               <div class="card-header d-flex justify-content-between p-3"
@@ -131,7 +133,7 @@
               </div>
             </div>
           </li>
-
+-->
 
 
 		
@@ -183,7 +185,110 @@
 ></script>
 
    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script>
+    window.addEventListener("load", function(event) {
+      let html_data = '';
+      html_data += `
+        <li class="d-flex justify-content-between mb-4">
 
+            <div class="card mask-custom w-100">
+              <div class="card-header d-flex justify-content-between p-3"
+                style="border-bottom: 1px solid rgba(255,255,255,.3);">
+                <p class="fw-bold mb-0">Your question</p>
+
+              </div>
+              <div class="card-body">
+                <p class="mb-0">
+                     {{ question }}
+                </p>
+              </div>
+            </div>
+            <img src="{{ url_for('static', filename='img/ji.png')}}" alt="avatar"
+              class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
+          </li>
+
+
+          <li class="d-flex justify-content-between mb-4">
+            <img src="{{ url_for('static', filename='img/chatbot.png')}}" alt="avatar"
+              class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+            <div class="card mask-custom w-100">
+              <div class="card-header d-flex justify-content-between p-3"
+                style="border-bottom: 1px solid rgba(255,255,255,.3);">
+                <p class="fw-bold mb-0">wtechGPT</p>
+
+              </div>
+              <div class="card-body">
+                <img id="loading" src="{{ url_for('static', filename='img/whiteloading.gif')}}" style="width:26px;height:26px;"/>
+              </div>
+            </div>
+          </li>
+      `;
+
+      $(".list-unstyled:first-child").append(html_data);
+       var question =  '{{ question }}'
+      console.log("question", question);
+      debugger;
+      $.ajax({
+      type: "POST",
+      url:"/youtube",
+      data : {'prompt' : question , 'isFirst':'False'},
+      success : function(data){debugger;
+        $(".list-unstyled:first-child li:last-child").remove();
+
+        var haveLink = data.answer.indexOf('https://youtu.be/')
+
+         if(haveLink > -1 ){
+                var link = data.answer.lastIndexOf("/")
+                var contain =  data.answer.substr(link+1)
+
+         }
+        console.log(contain);
+
+        let gpt_data = '';
+        gpt_data += `
+         <li class="d-flex justify-content-between mb-4">
+            <img src="{{ url_for('static', filename='img/chatbot.png')}}" alt="avatar"
+              class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
+            <div class="card mask-custom w-100">
+              <div class="card-header d-flex justify-content-between p-3"
+                style="border-bottom: 1px solid rgba(255,255,255,.3);">
+                <p class="fw-bold mb-0">wtechGPT</p>
+
+              </div>
+              <div class="card-body">
+                <p class="mb-0">
+                  ${data.answer}
+
+                </p>`
+
+                if (contain != undefined || contain !=null){
+                   gpt_data+=`<iframe height="300" width="400" src='https://www.youtube.com/embed/${contain}' ></iframe>`
+                }
+
+
+
+
+              gpt_data+=`</div>
+            </div>
+          </li>
+        `;
+
+         $(".list-unstyled:first-child").append(gpt_data);
+         $('html, body').animate({ scrollTop: $(".mb-3").offset().top -400 }, 100);
+
+
+      },
+       error:function(request,status,error){
+        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+       }
+
+    });
+
+
+  });
+
+
+</script>
 <script>
     /*
     *
@@ -211,13 +316,13 @@
                 </p>
               </div>
             </div>
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp" alt="avatar"
+            <img src="{{ url_for('static', filename='img/ji.png')}}" alt="avatar"
               class="rounded-circle d-flex align-self-start ms-3 shadow-1-strong" width="60">
           </li>
 
 
           <li class="d-flex justify-content-between mb-4">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
+            <img src="{{ url_for('static', filename='img/chatbot.png')}}" alt="avatar"
               class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
             <div class="card mask-custom w-100">
               <div class="card-header d-flex justify-content-between p-3"
@@ -258,7 +363,7 @@
         let gpt_data = '';
         gpt_data += `
          <li class="d-flex justify-content-between mb-4">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp" alt="avatar"
+            <img src="{{ url_for('static', filename='img/chatbot.png')}}" alt="avatar"
               class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
             <div class="card mask-custom w-100">
               <div class="card-header d-flex justify-content-between p-3"
