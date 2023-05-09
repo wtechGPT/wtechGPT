@@ -17,17 +17,14 @@ def page_not_found(e):
 app.register_error_handler(404, page_not_found)
 
 
-openai.organization = "org-dLiMqqSmLIXuV45cMCo7Pvcj"
-# openai.api_key = os.getenv("OPENAI_API_KEY" )
-
-openai.Model.list()
+openai.api_key = "자기 키 넣어야됨"
 
 
 
 ''' 은별이 코드 시작 '''
 
-df_n1apiKo=pd.read_csv('processed/embeddings_ko.csv', index_col=0)
-df_n1apiKo['embeddings'] = df_n1apiKo['embeddings'].apply(eval).apply(numpy.array)
+df_n1apiKo1=pd.read_csv('processed/embeddings_ko.csv', index_col=0)
+df_n1apiKo1['embeddings'] = df_n1apiKo1['embeddings'].apply(eval).apply(numpy.array)
 
 
 def create_context_ko(
@@ -315,7 +312,7 @@ def answer_question_chat(
             stop=stop_sequence,
         )
 
-        return response["choices"][0]["message"]["content"].strip()
+        return response["choices"][0]["message"]["content"].strip().replace('\n' , '<br/>')
     except Exception as e:
         print(e)
         return ""
@@ -348,26 +345,10 @@ def chat():
         isFirst =  request.form['isFirst']
         print("isFirst>>>", isFirst)
 
-        # find_list = ['link', '링크', '유튜브', 'youtube', '유투브']
-        # str_cnt = 0
-        # for i in find_list:
-        #     str_cnt += value.count(i)
-        #
-        # res = {}
-        #
-        # if str_cnt > 0 :
-        #     res['answer'] = answer_question_chat_ko(df_n1apiKo, question = value, debug=False) #은별이 코드
-        # else :
-        #     res['answer'] = answer_question_chat(df_cleaning_ko, question=value)  # 지수언니 코드
-        # print("str_cnt>>>",str_cnt)
-        # str_cnt = 0
 
-        # res['answer'] = answer_question_completion(df_cleaning_ko, question=value, debug=False) #내코드 샘플 연동
-        # res['answer'] = answer_question_chat(df_cleaning_ko, question=value) #지수언니 코드
-        # res['answer'] = answer_question_chat_ko(df_n1apiKo, question=value, debug=False) #은별이 코드
 
         if isFirst == 'False':
-            find_list = ['link', '링크', '유튜브', 'youtube', '유투브']
+            find_list = [ '링크', '유튜브', 'youtube', '유투브']
             str_cnt = 0
             for i in find_list:
                 str_cnt += value.count(i)
@@ -376,14 +357,14 @@ def chat():
 
             if str_cnt > 0:
                 print("youtube")
-                res['answer'] = answer_question_chat_ko(df_n1apiKo, question=value, debug=False)  # 은별이 코드
+                res['answer'] = answer_question_chat_ko(df_n1apiKo1, question=value, debug=False)  # 은별이 코드
             else:
                 print("Q&A")
                 res['answer'] = answer_question_chat(df_cleaning_ko, question=value)  # 지수언니 코드
             print("str_cnt>>>", str_cnt)
-            str_cnt = 0
 
-            print(">>>>>>answer1>>>>", res['answer'])
+
+            print(">>>>>>answer>>>>", res['answer'])
             return jsonify(res) , 200
 
 
