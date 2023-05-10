@@ -302,7 +302,7 @@ def answer_question_chat(
             model=model,
             messages=[
                 {"role": "user",
-                 "content": f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"I don't know\"\n\nContext: {context}\n\n---\n\nQuestion: {question}\nAnswer: Except if the phrase 'Attach a sample file' or '샘플파일 첨부' is included. answer me in korean. Make your answer 50% the length of the original. You may use only the example code in the original text."}
+                 "content": f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"I don't know\"\n\nContext: {context}\n\n---\n\nQuestion: {question}\nAnswer: Except if the phrase 'Attach a sample file' or '샘플파일 첨부' is included. answer me in korean. Make your answer 50% the length of the original. You may use only the example code in the original text.Please show the example code according to the source extension.Please exclude empty examples."}
             ],
             temperature=0,
             #             max_tokens=max_tokens,
