@@ -302,7 +302,11 @@ def answer_question_chat(
             model=model,
             messages=[
                 {"role": "user",
+<<<<<<< HEAD
                  "content": f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"I don't know\"\n\nContext: {context}\n\n---\n\nQuestion: {question}\nAnswer:  Exclude sentences that contain the meaning of the words 'Attach sample file' and 'Enter project name'.. answer me in korean. Make your answer 50% the length of the original. You may use only the example code in the original text.Please show the example code according to the source extension.Please exclude empty examples."}
+=======
+                 "content": f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"잘 모르겠습니다.\"\n\nContext: {context}\n\n---\n\nQuestion: {question}\nAnswer: Except if the phrase 'Attach a sample file' or '샘플파일 첨부' is included. answer me in korean. Make your answer 50% the length of the original. You may use only the example code in the original text.Please show the example code according to the source extension.Please exclude empty examples."}
+>>>>>>> 88846ca75127cd87189773b9a5c00b68d0ef27f8
             ],
             temperature=0,
             #             max_tokens=max_tokens,
