@@ -18,9 +18,6 @@ cd /fakepath/wtechGPT/flaskGPT
 flask run
 ```
 
-:eyes: 주의!! 
-- 대기 시간이 조금 걸릴 수 있으니 대기해 주세요.
-
 4. 아래와 같은 화면으로 cmd 창에 뜨면 해당 로컬 경로로 접속
 ```cmd
 C:\fakepath\flaskGPT>flask run
@@ -29,3 +26,6 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
 Press CTRL+C to quit
 ```
+
+:eyes: 주의!! 
+- 대기 시간이 조금 걸릴 수 있으니 대기해 주세요.
