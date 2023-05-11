@@ -8,6 +8,7 @@ import tiktoken
 import pandas as pd
 import os
 import matplotlib
+from markupsafe import escape
 
 app = Flask(__name__)
 
@@ -17,7 +18,10 @@ def page_not_found(e):
 app.register_error_handler(404, page_not_found)
 
 
-openai.api_key = "각자 키 넣기"
+openai.organization = "org-dLiMqqSmLIXuV45cMCo7Pvcj"
+# openai.api_key = os.getenv("OPENAI_API_KEY" )
+openai.api_key ="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"
+openai.Model.list()
 
 
 
@@ -113,7 +117,7 @@ def answer_question_chat_ko(
             stop=stop_sequence,
         )
 
-        return response["choices"][0]["message"]["content"].strip().replace('\n', '<br/>')
+        return response["choices"][0]["message"]["content"].strip()
     except Exception as e:
         print(e)
         return ""
@@ -302,7 +306,7 @@ def answer_question_chat(
             model=model,
             messages=[
                 {"role": "user",
-                 "content": f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"I don't know\"\n\nContext: {context}\n\n---\n\nQuestion: {question}\nAnswer:  Exclude sentences that contain the meaning of the words 'Attach sample file' and 'Enter project name'.. answer me in korean. Make your answer 50% the length of the original. You may use only the example code in the original text. Please exclude empty examples."}
+                 "content": f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"잘 모르겠습니다.\"\n\nContext: {context}\n\n---\n\nQuestion: {question}\nAnswer:  Exclude sentences that contain the meaning of the words 'Attach sample file' and 'Enter project name'.. answer me in korean. Make your answer 50% the length of the original. You may use only the example code in the original text. Please exclude empty examples."}
             ],
             temperature=0,
             #             max_tokens=max_tokens,
@@ -312,7 +316,7 @@ def answer_question_chat(
             stop=stop_sequence,
         )
 
-        return response["choices"][0]["message"]["content"].strip().replace('\n' , '<br/>')
+        return response["choices"][0]["message"]["content"].strip()
     except Exception as e:
         print(e)
         return ""
@@ -361,23 +365,18 @@ def chat():
             else:
                 print("Q&A")
                 res['answer'] = answer_question_chat(df_cleaning_ko, question=value)  # 지수언니 코드
+
             print("str_cnt>>>", str_cnt)
 
-
+            res['answer'] = escape(res['answer'] )
             print(">>>>>>answer>>>>", res['answer'])
             return jsonify(res) , 200
 
 
-    # return render_template('chat.html' , answer= an1 ,question =value)
-    # return render_template('chat.html' , answer= res['answer'] , question =value)
+
     return render_template('chat.html' , question=value)
 
 
-
-
-
-@app.route('/login')
-def login(): pass
 
 
 if __name__ == "__main__":
