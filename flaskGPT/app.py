@@ -20,7 +20,7 @@ app.register_error_handler(404, page_not_found)
 
 openai.organization = "org-dLiMqqSmLIXuV45cMCo7Pvcj"
 # openai.api_key = os.getenv("OPENAI_API_KEY" )
-openai.api_key ="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"
+openai.api_key = 자기 키 넣기
 openai.Model.list()
 
 
@@ -107,7 +107,7 @@ def answer_question_chat_ko(
             model=model,
             messages=[
                 {"role": "user",
-                 "content": f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"잘 모르겠습니다.\"\n\nContext: {context}\n\n---\n\nQuestion: {question}\nAnswer:"}
+                 "content": f"Answer the question based on the context below, and if the question can't be answered based on the context, say \"잘 모르겠습니다.\"\n\nContext: {context}\n\n---\n\nQuestion: {question}\nAnswer: Video title - Show it in link embedding format and put in a new line character \n when you're done with one topic"}
             ],
             temperature=0,
             #             max_tokens=max_tokens,
